@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+django-import-export = "*"
+django-rest-framework = "*"
+django-cors-headers = "*"
+pillow = "*"
+django-rest-multiple-models = "*"
+django-model-utils = "*"
+psycopg2-binary = "*"
+docutils = "*"
+djangorestframework-simplejwt = "*"
+django-filter = "*"
+
+[requires]
+python_version = "3.8"
