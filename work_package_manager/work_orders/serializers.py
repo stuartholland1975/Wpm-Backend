@@ -9,6 +9,20 @@ class ActivityUnitSerializer(serializers.ModelSerializer):
         fields = ['id', 'unit_description']
 
 
+class AreaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Area
+        fields = "__all__"
+
+
+
+class WorkTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WorkType
+        fields = "__all__"
+        
+
+
 class WorksheetSerializer(serializers.ModelSerializer):
     order_ref = serializers.SerializerMethodField('get_work_instruction')
     item_number = serializers.SerializerMethodField('get_item_number')

@@ -60,7 +60,7 @@ class OrderHeader(models.Model):
     project_title = models.CharField(max_length=255, verbose_name='Project Title')
     project_address = models.CharField(max_length=255, verbose_name='Address', null=True, blank=True)
     project_type = models.ForeignKey(WorkType, on_delete=models.PROTECT, verbose_name='Job Type', null=True, blank=True)
-    project_status = models.ForeignKey(OrderStatus, on_delete=models.PROTECT, null=True)
+    project_status = models.ForeignKey(OrderStatus, on_delete=models.PROTECT, null=True, blank=True)
     area = models.ForeignKey(Area, on_delete=models.PROTECT, verbose_name='Area')
     start_date = models.DateField(default=datetime.now)
     end_date = models.DateField(default=datetime.now)

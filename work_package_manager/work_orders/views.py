@@ -1,3 +1,4 @@
+from django.db.models import fields
 from django.shortcuts import render
 from django.db.models import Sum, Count, IntegerField, Q, F
 from rest_framework import viewsets, generics, views, permissions
@@ -9,8 +10,8 @@ from django_filters import rest_framework as filters
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
     SuperVisor, Worksheet, WorkType, Image, Document
 
-from .serializers import ActivitySerializer, ActivityUnitSerializer, OrderHeaderSerializer, OrderDetailSerializer, \
-    SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorksheetSerializer, SupervisorSerializer, \
+from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, OrderDetailSerializer, \
+    SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorkTypeSerializer, WorksheetSerializer, SupervisorSerializer, \
     ImagesSerializer, DocumentSerializer, ApplicationSerializer
 
 
@@ -80,11 +81,11 @@ class OrderLocations(generics.ListAPIView):
         work_instruction = self.kwargs['work_instruction']
         order = OrderHeader.objects.get(pk=work_instruction)
         return SiteLocation.objects.filter(work_instruction=order).annotate(item_count=Count('orderdetail'),
-                                                                            total_payable=Sum(
-                                                                                'orderdetail__total_payable'),
-                                                                            items_complete=Sum(Cast(
+                                                                            total_payable=Coalesce(Sum(
+                                                                                'orderdetail__total_payable'),0),
+                                                                            items_complete=Coalesce(Sum(Cast(
                                                                                 'orderdetail__item_complete',
-                                                                                IntegerField())))
+                                                                                IntegerField())), 0))
 
 
 class OrderSummaryInfo(ObjectMultipleModelAPIView):
@@ -105,11 +106,11 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
             ).order_by('item_number'),
              'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
-                                                         total_payable=Sum(
-                                                             'orderdetail__total_payable'),
-                                                         items_complete=Sum(Cast(
+                                                         total_payable=Coalesce(Sum(
+                                                             'orderdetail__total_payable'), 0.00),
+                                                         items_complete=Coalesce(Sum(Cast(
                                                              'orderdetail__item_complete',
-                                                             IntegerField()))).order_by('id'),
+                                                             IntegerField())), 0.00)).order_by('id'),
              'serializer_class': SiteLocationSerializer},
             {'queryset': Image.objects.filter(location__work_instruction=order.work_instruction).order_by(
                 '-image_type'),
@@ -150,3 +151,13 @@ class DocumentViewSet(viewsets.ModelViewSet):
 class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
     queryset = Application.objects.all().order_by('-app_number')[:5].annotate(application_value=Sum('worksheet__value_complete'))
+
+
+class AreaViewSet(viewsets.ModelViewSet):
+    serializer_class = AreaSerializer
+    queryset = Area.objects.all()
+
+
+class WorkTypesViewSet(viewsets.ModelViewSet):
+    serializer_class = WorkTypeSerializer
+    queryset = WorkType.objects.all()

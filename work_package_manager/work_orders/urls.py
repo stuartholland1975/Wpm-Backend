@@ -14,6 +14,8 @@ router.register('images', views.ImageViewSet)
 router.register('documents', views.DocumentViewSet)
 router.register('applications', views.ApplicationViewSet)
 router.register('orderstatus', views.OrderStatusViewSet)
+router.register('areas', views.AreaViewSet)
+router.register('worktypes', views.WorkTypesViewSet)
 
 
 urlpatterns = [
