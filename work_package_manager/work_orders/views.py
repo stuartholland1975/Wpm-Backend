@@ -8,11 +8,11 @@ from rest_framework.response import Response
 from django_filters import rest_framework as filters
 
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, Image, Document
+    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
 
 from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, OrderDetailSerializer, \
     SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorkTypeSerializer, WorksheetSerializer, SupervisorSerializer, \
-    ImagesSerializer, DocumentSerializer, ApplicationSerializer
+    ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
 
 
 class ActivityUnitsViewSet(viewsets.ModelViewSet):
@@ -161,3 +161,10 @@ class AreaViewSet(viewsets.ModelViewSet):
 class WorkTypesViewSet(viewsets.ModelViewSet):
     serializer_class = WorkTypeSerializer
     queryset = WorkType.objects.all()
+
+
+class RateSetViewSet(viewsets.ModelViewSet):
+    serializer_class = RateSetSerializer
+    queryset = RateSetUplifts.objects.all()
+
+    

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, ConstructionImage, Image, Post, Document
+    SuperVisor, Worksheet, WorkType, ConstructionImage, Image, Post, Document, RateSetUplifts
 
 
 class ActivityUnitSerializer(serializers.ModelSerializer):
@@ -161,4 +161,10 @@ class ApplicationSerializer(serializers.ModelSerializer):
     application_value = serializers.FloatField(read_only=True)
     class Meta:
         model = Application
+        fields = '__all__'
+
+
+class RateSetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RateSetUplifts
         fields = '__all__'

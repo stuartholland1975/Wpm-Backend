@@ -1,7 +1,7 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from .models import Activity, ActivityUnits, OrderHeader, OrderStatus, Area, SiteLocation, OrderDetail, Worksheet, \
-    WorkType, SuperVisor, ConstructionImage, Application, Image, Post, Document
+    WorkType, SuperVisor, ConstructionImage, Application, Image, Post, Document, RateSetUplifts
 
 
 @admin.register(Activity)
@@ -76,4 +76,9 @@ class PostAdmin(ImportExportModelAdmin):
 
 @admin.register(Document)
 class DocumentAdmin(ImportExportModelAdmin):
+    pass
+
+
+@admin.register(RateSetUplifts)
+class RateSetUpliftsAdmin(ImportExportModelAdmin):
     pass

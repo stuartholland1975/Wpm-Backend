@@ -261,3 +261,11 @@ class Document(models.Model):
 
     def __str__(self):
         return self.document_title
+
+
+class RateSetUplifts(models.Model):
+    rateset_code = models.IntegerField(unique=True, verbose_name="Rate Set Code")
+    labour_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4, verbose_name="Labour Percentage Uplift")
+    materials_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4, verbose_name="Materials Percentage Uplift")
+    date_from = models.DateField(verbose_name="Date Applicable From")
+    date_to = models.DateField(verbose_name="Date Applicable To")
