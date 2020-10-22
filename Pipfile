@@ -17,6 +17,8 @@ psycopg2-binary = "*"
 docutils = "*"
 djangorestframework-simplejwt = "*"
 django-filter = "*"
+django-exiffield = "*"
+djangorestframework-gis = "*"
 
 [requires]
 python_version = "3.8"

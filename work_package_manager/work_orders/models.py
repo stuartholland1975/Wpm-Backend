@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import datetime
 from model_utils import Choices
+from exiffield.fields import ExifField
+from exiffield.getters import exifgetter
 
 
 class ActivityUnits(models.Model):
@@ -225,10 +227,21 @@ class Image(models.Model):
     title = models.CharField(max_length=255, verbose_name='Title', null=True, blank=False)
     location = models.ForeignKey(SiteLocation, on_delete=models.PROTECT, verbose_name='Site Location')
     construction_image = models.ImageField(upload_to='images/original', blank=True, verbose_name='Construction Image')
-    construction_image_resized = models.ImageField(upload_to='images/resized/', blank=True, verbose_name='Resized Construction Image')
+    construction_image_resized = models.ImageField(upload_to='images/resized/', blank=True,
+                                                   verbose_name='Resized Construction Image')
     image_type = models.CharField(choices=IMAGE_CLASS, verbose_name='Image Type', max_length=10)
     date_image = models.DateField(verbose_name='Image Date', null=True, blank=True)
     notes = models.CharField(max_length=255, verbose_name='Notes', null=True, blank=True)
+    camera = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    gps_lat = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    gps_long = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    gps_date = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    date_time_original = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    exif = ExifField(source='construction_image',
+                     denormalized_fields={'camera': exifgetter('Model'), 'gps_lat': exifgetter('GPSLatitude'),
+                                          'gps_long': exifgetter('GPSLongitude'),
+                                          'gps_date': exifgetter('GPSDateTime'),
+                                          'date_time_original': exifgetter('DateTimeOriginal'), }, )
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
@@ -265,7 +278,9 @@ class Document(models.Model):
 
 class RateSetUplifts(models.Model):
     rateset_code = models.IntegerField(unique=True, verbose_name="Rate Set Code")
-    labour_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4, verbose_name="Labour Percentage Uplift")
-    materials_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4, verbose_name="Materials Percentage Uplift")
+    labour_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4,
+                                                   verbose_name="Labour Percentage Uplift")
+    materials_uplift_percentage = models.DecimalField(max_digits=5, decimal_places=4,
+                                                      verbose_name="Materials Percentage Uplift")
     date_from = models.DateField(verbose_name="Date Applicable From")
     date_to = models.DateField(verbose_name="Date Applicable To")
