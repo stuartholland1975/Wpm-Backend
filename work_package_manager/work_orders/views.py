@@ -35,7 +35,10 @@ class OrderHeaderViewSet(viewsets.ModelViewSet):
 
 
 class OrderDetailViewSet(viewsets.ModelViewSet):
-    queryset = OrderDetail.objects.all().order_by('id').distinct()
+    queryset = OrderDetail.objects.annotate(qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
+                value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
+                qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
+                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00), qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'),0.00))
     serializer_class = OrderDetailSerializer
     filterset_fields = ('work_instruction', 'worksheet__applied', 'worksheet__application_number', 'id',)
 
@@ -55,6 +58,7 @@ class OrderItem(generics.ListAPIView):
 class SiteLocationViewSet(viewsets.ModelViewSet):
     serializer_class = SiteLocationSerializer
     queryset = SiteLocation.objects.all()
+    filterset_fields = ('work_instruction',)
 
 
 class SupervisorViewSet(viewsets.ModelViewSet):
@@ -79,7 +83,7 @@ class OrderLocations(generics.ListAPIView):
 
     def get_queryset(self):
         work_instruction = self.kwargs['work_instruction']
-        order = OrderHeader.objects.get(pk=work_instruction)
+        order = OrderHeader.objects.get(work_instruction=work_instruction)
         return SiteLocation.objects.filter(work_instruction=order).annotate(item_count=Count('orderdetail'),
                                                                             total_payable=Coalesce(Sum(
                                                                                 'orderdetail__total_payable'),0),
@@ -134,7 +138,7 @@ class ImageFilter(filters.FilterSet):
 
     class Meta:
         model = Image
-        fields = ['location_in', 'location',]
+        fields = ['location_in', 'location', 'location__work_instruction',]
 
 
 class ImageViewSet(viewsets.ModelViewSet):
