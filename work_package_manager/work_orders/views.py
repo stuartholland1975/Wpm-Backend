@@ -1,18 +1,14 @@
-from django.db.models import fields
-from django.shortcuts import render
 from django.db.models import Sum, Count, IntegerField, Q, F
-from rest_framework import viewsets, generics, views, permissions
 from django.db.models.functions import Coalesce, Cast
-from drf_multiple_model.views import ObjectMultipleModelAPIView, FlatMultipleModelAPIView
-from rest_framework.response import Response
 from django_filters import rest_framework as filters
+from drf_multiple_model.views import ObjectMultipleModelAPIView
+from rest_framework import viewsets, generics, permissions
 
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
     SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
-
 from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, \
     OrderDetailSerializer, \
-    SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorkTypeSerializer, WorksheetSerializer, \
+    SiteLocationSerializer, OrderStatusSerializer, WorkTypeSerializer, WorksheetSerializer, \
     SupervisorSerializer, \
     ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
 
@@ -47,7 +43,8 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
                                                 0.00),
                                             qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'), 0.00))
     serializer_class = OrderDetailSerializer
-    filterset_fields = ('work_instruction', 'worksheet__applied', 'worksheet__application_number', 'id',)
+    filterset_fields = (
+        'work_instruction', 'worksheet__applied', 'worksheet__application_number', 'id', 'location_ref',)
 
 
 class OrderItem(generics.ListAPIView):
