@@ -10,8 +10,10 @@ from django_filters import rest_framework as filters
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
     SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
 
-from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, OrderDetailSerializer, \
-    SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorkTypeSerializer, WorksheetSerializer, SupervisorSerializer, \
+from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, \
+    OrderDetailSerializer, \
+    SiteLocationSerializer, OrderStatusSerializer, SupervisorSerializer, WorkTypeSerializer, WorksheetSerializer, \
+    SupervisorSerializer, \
     ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
 
 
@@ -36,12 +38,16 @@ class OrderHeaderViewSet(viewsets.ModelViewSet):
 
 class OrderDetailViewSet(viewsets.ModelViewSet):
     queryset = OrderDetail.objects.annotate(qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
-                value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
-                qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
-                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00), qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'),0.00))
+                                            value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
+                                            qty_applied=Coalesce(
+                                                Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)),
+                                                0.00),
+                                            value_applied=Coalesce(
+                                                Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)),
+                                                0.00),
+                                            qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'), 0.00))
     serializer_class = OrderDetailSerializer
     filterset_fields = ('work_instruction', 'worksheet__applied', 'worksheet__application_number', 'id',)
-
 
 
 class OrderItem(generics.ListAPIView):
@@ -49,15 +55,28 @@ class OrderItem(generics.ListAPIView):
 
     def get_queryset(self):
         item = self.kwargs['id']
-        return  OrderDetail.objects.filter(pk=item).annotate(qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
-                value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
-                qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
-                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00), qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'),0.00))
-        
+        return OrderDetail.objects.filter(pk=item).annotate(qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
+                                                            value_complete=Coalesce(Sum('worksheet__value_complete'),
+                                                                                    0.00),
+                                                            qty_applied=Coalesce(Sum('worksheet__qty_complete',
+                                                                                     filter=Q(worksheet__applied=True)),
+                                                                                 0.00),
+                                                            value_applied=Coalesce(Sum('worksheet__value_complete',
+                                                                                       filter=Q(
+                                                                                           worksheet__applied=True)),
+                                                                                   0.00),
+                                                            qty_os=F('qty_ordered') - Coalesce(
+                                                                Sum('worksheet__qty_complete'), 0.00))
+
 
 class SiteLocationViewSet(viewsets.ModelViewSet):
     serializer_class = SiteLocationSerializer
-    queryset = SiteLocation.objects.all()
+    queryset = SiteLocation.objects.annotate(item_count=Count('orderdetail'),
+                                             total_payable=Coalesce(Sum(
+                                                 'orderdetail__total_payable'), 0),
+                                             items_complete=Coalesce(Sum(Cast(
+                                                 'orderdetail__item_complete',
+                                                 IntegerField())), 0))
     filterset_fields = ('work_instruction',)
 
 
@@ -86,7 +105,7 @@ class OrderLocations(generics.ListAPIView):
         order = OrderHeader.objects.get(work_instruction=work_instruction)
         return SiteLocation.objects.filter(work_instruction=order).annotate(item_count=Count('orderdetail'),
                                                                             total_payable=Coalesce(Sum(
-                                                                                'orderdetail__total_payable'),0),
+                                                                                'orderdetail__total_payable'), 0),
                                                                             items_complete=Coalesce(Sum(Cast(
                                                                                 'orderdetail__item_complete',
                                                                                 IntegerField())), 0))
@@ -106,7 +125,8 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
                 qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
                 value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
                 qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
-                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00), qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'),0.00)
+                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
+                qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'), 0.00)
             ).order_by('item_number'),
              'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
@@ -138,7 +158,7 @@ class ImageFilter(filters.FilterSet):
 
     class Meta:
         model = Image
-        fields = ['location_in', 'location', 'location__work_instruction',]
+        fields = ['location_in', 'location', 'location__work_instruction', ]
 
 
 class ImageViewSet(viewsets.ModelViewSet):
@@ -154,7 +174,8 @@ class DocumentViewSet(viewsets.ModelViewSet):
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
-    queryset = Application.objects.all().order_by('-app_number')[:5].annotate(application_value=Sum('worksheet__value_complete'))
+    queryset = Application.objects.all().order_by('-app_number')[:5].annotate(
+        application_value=Sum('worksheet__value_complete'))
 
 
 class AreaViewSet(viewsets.ModelViewSet):
@@ -170,5 +191,3 @@ class WorkTypesViewSet(viewsets.ModelViewSet):
 class RateSetViewSet(viewsets.ModelViewSet):
     serializer_class = RateSetSerializer
     queryset = RateSetUplifts.objects.all()
-
-    
