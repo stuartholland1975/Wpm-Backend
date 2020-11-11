@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="WPM" uuid="82466542-0817-4eaa-86db-82a2a3267da9">
+    <data-source source="LOCAL" name="WPM-BEELINK" uuid="e28ad1ad-3119-4912-9eef-b6439d389ffd">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.0.40:5432/work_package_manager</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/work_package_manager</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -15,12 +15,10 @@ class AreaSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
 class WorkTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkType
         fields = "__all__"
-        
 
 
 class WorksheetSerializer(serializers.ModelSerializer):
@@ -101,7 +99,7 @@ class OrderDetailSerializer(serializers.ModelSerializer):
     qty_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     value_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     qty_os = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    
+
     def get_worksheet_ref(self, obj):
         return obj.location_ref.worksheet_ref
 
@@ -159,6 +157,7 @@ class DocumentSerializer(serializers.ModelSerializer):
 
 class ApplicationSerializer(serializers.ModelSerializer):
     application_value = serializers.FloatField(read_only=True)
+
     class Meta:
         model = Application
         fields = '__all__'

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="WPM" uuid="82466542-0817-4eaa-86db-82a2a3267da9">
+    <data-source name="WPM-BEELINK" uuid="e28ad1ad-3119-4912-9eef-b6439d389ffd">
       <database-info product="PostgreSQL" version="12.4 (Ubuntu 12.4-0ubuntu0.20.04.1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="12.4" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
+      <user-name>developer</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="@">
@@ -15,6 +15,10 @@
           </node>
         </introspection-scope>
       </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>5aeb6785-60a3-4802-b5e6-adabba8aaf83</ssh-config-id>
+      </ssh-properties>
     </data-source>
   </component>
 </project>
