@@ -25,5 +25,6 @@ urlpatterns = [
     path('orders/locations/<int:work_instruction>', views.OrderLocations.as_view()),
     path('activity/info', views.ActivityInfo.as_view(), name='activity-info'),
     path('orderdetail/item/<int:id>', views.OrderItem.as_view()),
+    path('commercial/applications/orders/', views.ApplicationOrders.as_view()),
 
 ]

@@ -69,6 +69,8 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     order_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     item_count = serializers.IntegerField(read_only=True)
     issued_date_formatted = serializers.SerializerMethodField('format_date')
+    doc_count = serializers.IntegerField(read_only=True)
+    applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
 
     def get_work_type(self, obj):
         return obj.project_type.work_type_description

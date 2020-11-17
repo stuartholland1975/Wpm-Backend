@@ -74,7 +74,7 @@ class SiteLocationViewSet(viewsets.ModelViewSet):
                                              items_complete=Coalesce(Sum(Cast(
                                                  'orderdetail__item_complete',
                                                  IntegerField())), 0))
-    filterset_fields = ('work_instruction',)
+    filterset_fields = ('work_instruction', 'worksheet__application_number',)
 
 
 class SupervisorViewSet(viewsets.ModelViewSet):
@@ -136,6 +136,8 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
             {'queryset': Image.objects.filter(location__work_instruction=order.work_instruction).order_by(
                 '-image_type'),
                 'serializer_class': ImagesSerializer},
+            {'queryset': Document.objects.filter(work_instruction=order.id),
+             'serializer_class': DocumentSerializer},
         ]
         return querylist
 
@@ -188,3 +190,12 @@ class WorkTypesViewSet(viewsets.ModelViewSet):
 class RateSetViewSet(viewsets.ModelViewSet):
     serializer_class = RateSetSerializer
     queryset = RateSetUplifts.objects.all()
+
+
+class ApplicationOrders(generics.ListAPIView):
+    serializer_class = OrderHeaderSerializer
+    filterset_fields = ('orderdetail__worksheet__application_number',)
+
+    def get_queryset(self):
+        return OrderHeader.objects.filter(orderdetail__worksheet__applied=True).annotate(
+            applied_value=Sum('orderdetail__worksheet__value_complete'))
