@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'work_package_manager',
         'USER': 'postgres',
         'PASSWORD': '987jmo00',
-        'HOST': '192.168.0.40',
+        'HOST': '192.168.0.4',
         'PORT': '5432',
     }
 }
@@ -149,8 +149,8 @@ REST_FRAMEWORK = {
     ),
     'COERCE_DECIMAL_TO_STRING': False,
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-        #'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

@@ -133,6 +133,8 @@ class OrderDetail(models.Model):
     ITEM_TYPES = Choices(('BOQ', 'BOQ'),
                          ('VARN', 'Variation'),
                          ('MISC', 'Misc'),
+                         ('FREE', 'Free'),
+                         ('DIRECTS', 'Directs'),
                          )
     work_instruction = models.ForeignKey(OrderHeader, to_field='work_instruction', on_delete=models.SET_NULL, null=True)
     location_ref = models.ForeignKey(SiteLocation, on_delete=models.PROTECT,

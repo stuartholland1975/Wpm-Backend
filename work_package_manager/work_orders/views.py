@@ -13,6 +13,14 @@ from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSeriali
     ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
 
 
+class CharInFilter(filters.BaseInFilter, filters.CharFilter):
+    pass
+
+
+class ActivityFilter(filters.FilterSet):
+    activity_in = CharInFilter(field_name='activity_code', lookup_expr='in')
+
+
 class ActivityUnitsViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     authentication_classes = []
@@ -23,6 +31,7 @@ class ActivityUnitsViewSet(viewsets.ModelViewSet):
 class ActivityViewSet(viewsets.ModelViewSet):
     queryset = Activity.objects.all().order_by('id')
     serializer_class = ActivitySerializer
+    filter_class = ActivityFilter
 
 
 class OrderHeaderViewSet(viewsets.ModelViewSet):
@@ -173,8 +182,15 @@ class DocumentViewSet(viewsets.ModelViewSet):
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
-    queryset = Application.objects.all().order_by('-app_number')[:5].annotate(
-        application_value=Sum('worksheet__value_complete'))
+    queryset = Application.objects.all().order_by('-app_number').annotate(
+        application_value=Coalesce(Sum('worksheet__value_complete'), 0.00))
+
+
+class CurrentApplication(generics.ListAPIView):
+    serializer_class = ApplicationSerializer
+
+    def get_queryset(self):
+        return Application.objects.filter(app_current=True)
 
 
 class AreaViewSet(viewsets.ModelViewSet):
