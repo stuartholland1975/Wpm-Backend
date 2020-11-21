@@ -19,6 +19,8 @@ djangorestframework-simplejwt = "*"
 django-filter = "*"
 django-exiffield = "*"
 djangorestframework-gis = "*"
+djangorestframework-bulk = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

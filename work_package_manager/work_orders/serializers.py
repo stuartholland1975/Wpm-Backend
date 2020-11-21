@@ -1,6 +1,11 @@
 from rest_framework import serializers
+from rest_framework_bulk import (
+    BulkListSerializer,
+    BulkSerializerMixin,
+)
+
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, ConstructionImage, Image, Post, Document, RateSetUplifts
+    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
 
 
 class ActivityUnitSerializer(serializers.ModelSerializer):
@@ -21,7 +26,7 @@ class WorkTypeSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class WorksheetSerializer(serializers.ModelSerializer):
+class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     order_ref = serializers.SerializerMethodField('get_work_instruction')
     item_number = serializers.SerializerMethodField('get_item_number')
     location_ref = serializers.SerializerMethodField('get_location_ref')
@@ -41,6 +46,7 @@ class WorksheetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Worksheet
+        list_serializer_class = BulkListSerializer
         fields = '__all__'
 
 
@@ -71,6 +77,8 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     issued_date_formatted = serializers.SerializerMethodField('format_date')
     doc_count = serializers.IntegerField(read_only=True)
     applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    labour_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    materials_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
 
     def get_work_type(self, obj):
         return obj.project_type.work_type_description
@@ -90,7 +98,7 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
         datatables_always_serialize = 'id'
 
 
-class OrderDetailSerializer(serializers.ModelSerializer):
+class OrderDetailSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     site_location = serializers.SerializerMethodField('get_site_location')
     activity_code = serializers.SerializerMethodField('get_activity_code')
     activity_description = serializers.SerializerMethodField('get_activity_description')
@@ -101,6 +109,9 @@ class OrderDetailSerializer(serializers.ModelSerializer):
     qty_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     value_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     qty_os = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    applied_value = serializers.FloatField(read_only=True)
+    labour_value = serializers.FloatField(read_only=True)
+    materials_value = serializers.FloatField(read_only=True)
 
     def get_worksheet_ref(self, obj):
         return obj.location_ref.worksheet_ref
@@ -121,17 +132,22 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         model = OrderDetail
         fields = '__all__'
         datatables_always_serialize = 'id'
+        list_serializer_class = BulkListSerializer
 
 
 class SiteLocationSerializer(serializers.ModelSerializer):
     item_count = serializers.IntegerField(read_only=True)
     items_complete = serializers.IntegerField(read_only=True)
     total_payable = serializers.FloatField(read_only=True)
+    applied_value = serializers.FloatField(read_only=True)
+    labour_value = serializers.FloatField(read_only=True)
+    materials_value = serializers.FloatField(read_only=True)
 
     class Meta:
         model = SiteLocation
         fields = '__all__'
         datatables_always_serialize = 'id'
+        list_serializer_class = BulkListSerializer
 
 
 class OrderStatusSerializer(serializers.ModelSerializer):

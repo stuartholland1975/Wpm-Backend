@@ -17,31 +17,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/original/download.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/original/images_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/original/images_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/resized/download.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/resized/images_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/resized/images_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/work_orders/migrations/0019_auto_20201117_1839.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_package_manager/work_orders/migrations/0020_auto_20201117_2142.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/original/20190915_162408_kH6DDyV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/original/20191029_130402_085_z8NeDtJ_ejA1W49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/resized/20190915_162408_dca1DLJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_package_manager/media/images/resized/20191029_130402_085_z8NeDtJ_ulISat7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/images/ApplicationImages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wpm-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wpm-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_package_manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_package_manager/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationBillItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationBillItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationInstructionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationInstructionsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationLocations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/commercial/AvailableOrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/commercial/AvailableOrderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/commercial/AvailableWorksheetsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/commercial/AvailableWorksheetsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/import-data/ImportInstructionData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/import-data/ImportInstructionData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/InstructionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/InstructionModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
     </list>
@@ -56,6 +67,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -111,7 +123,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -126,6 +138,311 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="wpm/api/activity" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;username&quot;: &quot;stuart.holland&quot;, &quot;password&quot;:&quot;987jmo00&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000/wpm/api/activity" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;username&quot;: &quot;stuart.holland&quot;, &quot;password&quot;:&quot;987jmo00&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="wpm/api/worksheets/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;username&quot;: &quot;stuart.holland&quot;, &quot;password&quot;:&quot;987jmo00&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="wpm/api/worksheets" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;username&quot;: &quot;stuart.holland&quot;, &quot;password&quot;:&quot;987jmo00&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/token/obtain/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;username&quot;: &quot;stuart.holland&quot;, &quot;password&quot;:&quot;987jmo00&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/token/obtain/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/token/obtain/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/token/obtain" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/token/obtain" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/api" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/wpm/api/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://0.0.0.0:8000" />
+          <option name="urlPath" value="/wpm/api" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8000" />
+          <option name="urlPath" value="/wpm/api/worksheets" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8000" />
+          <option name="urlPath" value="wpm/api/worksheets" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8000" />
@@ -149,8 +466,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Django Server.WPM">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_1#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -175,6 +495,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="wpm-backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work_package_manager/bulk_api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_package_manager/bulk_api/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="WPM" type="Python.DjangoServer" factoryName="Django server">
       <module name="wpm-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,7 +532,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="localhost" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -212,10 +554,14 @@
     <list>
       <item itemvalue="Django Server.WPM" />
       <item itemvalue="HTTP Request.rest-api#1" />
+      <item itemvalue="HTTP Request.rest-api_1#1" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Python.tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api_1#1" />
+        <item itemvalue="Python.tests" />
         <item itemvalue="HTTP Request.rest-api#1" />
       </list>
     </recent_temporary>
@@ -253,7 +599,12 @@
       <workItem from="1605674057403" duration="10901000" />
       <workItem from="1605727756436" duration="1051000" />
       <workItem from="1605729281045" duration="3552000" />
-      <workItem from="1605735572114" duration="8810000" />
+      <workItem from="1605735572114" duration="9437000" />
+      <workItem from="1605749459092" duration="19871000" />
+      <workItem from="1605944661198" duration="5926000" />
+      <workItem from="1605976279759" duration="1762000" />
+      <workItem from="1605978084278" duration="1107000" />
+      <workItem from="1605979222775" duration="16650000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>
@@ -318,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605632210590</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="19112020">
+      <created>1605746945681</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605746945681</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,13 +701,15 @@
     <MESSAGE value="09112020" />
     <MESSAGE value="12112020" />
     <MESSAGE value="17112020" />
-    <option name="LAST_COMMIT_MESSAGE" value="17112020" />
+    <MESSAGE value="19112020" />
+    <option name="LAST_COMMIT_MESSAGE" value="19112020" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="316" y="48" key="#Inspections" timestamp="1605093879600">
-      <screen x="0" y="0" width="1364" height="732" />
+    <state x="445" y="68" key="#Inspections" timestamp="1605974238898">
+      <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="316" y="48" key="#Inspections/0.0.1364.732@0.0.1364.732" timestamp="1605093879600" />
+    <state x="445" y="68" key="#Inspections/0.0.1920.1044@0.0.1920.1044" timestamp="1605974238898" />
     <state x="544" y="153" width="832" height="738" key="#JSHint" timestamp="1605631875112">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -359,10 +719,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="543" y="189" key="#SSH_Configurations/0.0.1920.1044@0.0.1920.1044" timestamp="1605039692714" />
-    <state x="424" y="180" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605039705532">
+    <state x="424" y="180" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605979773397">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="424" y="180" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1605039705532" />
+    <state x="424" y="180" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1605979773397" />
     <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605654750422">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -393,86 +753,86 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="742" y="265" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1605474699638" />
-    <state width="1874" height="324" key="GridCell.Tab.0.bottom" timestamp="1605742566311">
+    <state width="1255" height="863" key="GridCell.Tab.0.bottom" timestamp="1605989716406">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.0.bottom/0.0.1364.732@0.0.1364.732" timestamp="1605105932233" />
-    <state width="1874" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566311" />
-    <state width="1874" height="324" key="GridCell.Tab.0.center" timestamp="1605742566310">
+    <state width="1255" height="863" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716406" />
+    <state width="1255" height="863" key="GridCell.Tab.0.center" timestamp="1605989716405">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.0.center/0.0.1364.732@0.0.1364.732" timestamp="1605105932232" />
-    <state width="1874" height="324" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566310" />
-    <state width="1874" height="324" key="GridCell.Tab.0.left" timestamp="1605742566310">
+    <state width="1255" height="863" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716405" />
+    <state width="1255" height="863" key="GridCell.Tab.0.left" timestamp="1605989716405">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.0.left/0.0.1364.732@0.0.1364.732" timestamp="1605105932231" />
-    <state width="1874" height="324" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566310" />
-    <state width="1874" height="324" key="GridCell.Tab.0.right" timestamp="1605742566311">
+    <state width="1255" height="863" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716405" />
+    <state width="1255" height="863" key="GridCell.Tab.0.right" timestamp="1605989716406">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.0.right/0.0.1364.732@0.0.1364.732" timestamp="1605105932232" />
-    <state width="1874" height="324" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566311" />
-    <state width="1874" height="324" key="GridCell.Tab.1.bottom" timestamp="1605742566312">
+    <state width="1255" height="863" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716406" />
+    <state width="1255" height="863" key="GridCell.Tab.1.bottom" timestamp="1605989716408">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.1.bottom/0.0.1364.732@0.0.1364.732" timestamp="1605105932234" />
-    <state width="1874" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566312" />
-    <state width="1874" height="324" key="GridCell.Tab.1.center" timestamp="1605742566311">
+    <state width="1255" height="863" key="GridCell.Tab.1.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716408" />
+    <state width="1255" height="863" key="GridCell.Tab.1.center" timestamp="1605989716407">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.1.center/0.0.1364.732@0.0.1364.732" timestamp="1605105932234" />
-    <state width="1874" height="324" key="GridCell.Tab.1.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566311" />
-    <state width="1874" height="324" key="GridCell.Tab.1.left" timestamp="1605742566311">
+    <state width="1255" height="863" key="GridCell.Tab.1.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716407" />
+    <state width="1255" height="863" key="GridCell.Tab.1.left" timestamp="1605989716407">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.1.left/0.0.1364.732@0.0.1364.732" timestamp="1605105932233" />
-    <state width="1874" height="324" key="GridCell.Tab.1.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566311" />
-    <state width="1874" height="324" key="GridCell.Tab.1.right" timestamp="1605742566311">
+    <state width="1255" height="863" key="GridCell.Tab.1.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716407" />
+    <state width="1255" height="863" key="GridCell.Tab.1.right" timestamp="1605989716408">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.1.right/0.0.1364.732@0.0.1364.732" timestamp="1605105932234" />
-    <state width="1874" height="324" key="GridCell.Tab.1.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566311" />
-    <state width="1874" height="324" key="GridCell.Tab.2.bottom" timestamp="1605742566313">
+    <state width="1255" height="863" key="GridCell.Tab.1.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605989716408" />
+    <state width="359" height="863" key="GridCell.Tab.2.bottom" timestamp="1605979704532">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.2.bottom/0.0.1364.732@0.0.1364.732" timestamp="1605105932236" />
-    <state width="1874" height="324" key="GridCell.Tab.2.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566313" />
-    <state width="1874" height="324" key="GridCell.Tab.2.center" timestamp="1605742566312">
+    <state width="359" height="863" key="GridCell.Tab.2.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704532" />
+    <state width="359" height="863" key="GridCell.Tab.2.center" timestamp="1605979704531">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.2.center/0.0.1364.732@0.0.1364.732" timestamp="1605105932235" />
-    <state width="1874" height="324" key="GridCell.Tab.2.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566312" />
-    <state width="1874" height="324" key="GridCell.Tab.2.left" timestamp="1605742566312">
+    <state width="359" height="863" key="GridCell.Tab.2.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704531" />
+    <state width="359" height="863" key="GridCell.Tab.2.left" timestamp="1605979704530">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.2.left/0.0.1364.732@0.0.1364.732" timestamp="1605105932235" />
-    <state width="1874" height="324" key="GridCell.Tab.2.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566312" />
-    <state width="1874" height="324" key="GridCell.Tab.2.right" timestamp="1605742566312">
+    <state width="359" height="863" key="GridCell.Tab.2.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704530" />
+    <state width="359" height="863" key="GridCell.Tab.2.right" timestamp="1605979704531">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.2.right/0.0.1364.732@0.0.1364.732" timestamp="1605105932235" />
-    <state width="1874" height="324" key="GridCell.Tab.2.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566312" />
-    <state width="1874" height="324" key="GridCell.Tab.3.bottom" timestamp="1605742566314">
+    <state width="359" height="863" key="GridCell.Tab.2.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704531" />
+    <state width="359" height="863" key="GridCell.Tab.3.bottom" timestamp="1605979704532">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.3.bottom/0.0.1364.732@0.0.1364.732" timestamp="1605105932237" />
-    <state width="1874" height="324" key="GridCell.Tab.3.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566314" />
-    <state width="1874" height="324" key="GridCell.Tab.3.center" timestamp="1605742566313">
+    <state width="359" height="863" key="GridCell.Tab.3.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704532" />
+    <state width="359" height="863" key="GridCell.Tab.3.center" timestamp="1605979704532">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.3.center/0.0.1364.732@0.0.1364.732" timestamp="1605105932237" />
-    <state width="1874" height="324" key="GridCell.Tab.3.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566313" />
-    <state width="1874" height="324" key="GridCell.Tab.3.left" timestamp="1605742566313">
+    <state width="359" height="863" key="GridCell.Tab.3.center/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704532" />
+    <state width="359" height="863" key="GridCell.Tab.3.left" timestamp="1605979704532">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.3.left/0.0.1364.732@0.0.1364.732" timestamp="1605105932236" />
-    <state width="1874" height="324" key="GridCell.Tab.3.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566313" />
-    <state width="1874" height="324" key="GridCell.Tab.3.right" timestamp="1605742566314">
+    <state width="359" height="863" key="GridCell.Tab.3.left/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704532" />
+    <state width="359" height="863" key="GridCell.Tab.3.right" timestamp="1605979704532">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state width="1318" height="213" key="GridCell.Tab.3.right/0.0.1364.732@0.0.1364.732" timestamp="1605105932237" />
-    <state width="1874" height="324" key="GridCell.Tab.3.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605742566314" />
+    <state width="359" height="863" key="GridCell.Tab.3.right/0.0.1920.1044@0.0.1920.1044" timestamp="1605979704532" />
     <state width="235" height="500" key="HiddenNamespacesPopup" timestamp="1604022856747">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -485,11 +845,11 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="779" y="206" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1604194940234" />
-    <state x="0" y="0" width="1920" height="1044" key="SettingsEditor" timestamp="1605631585985">
+    <state x="0" y="0" width="1920" height="1044" key="SettingsEditor" timestamp="1605979325708">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="324" y="2" key="SettingsEditor/0.0.1364.732@0.0.1364.732" timestamp="1604679287251" />
-    <state x="0" y="0" width="1920" height="1044" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1605631585985" />
+    <state x="0" y="0" width="1920" height="1044" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1605979325708" />
     <state x="100" y="100" width="1720" height="844" key="VCS.FileHistoryDialog" timestamp="1605048447898">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -534,5 +894,9 @@
         <watch expression="const apiObject = useSelector(createApiObject);" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/wpm_backend$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1605977683408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/wpm_backend$Test__bulk_api.coverage" NAME="Test: bulk_api Coverage Results" MODIFIED="1605977941793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

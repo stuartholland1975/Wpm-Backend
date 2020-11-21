@@ -7,5 +7,13 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/work_package_manager</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="99c0b512-043d-4356-9278-e6390aeffed1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://192.168.0.40:5432/work_package_manager</jdbc-url>
+    </data-source>
   </component>
 </project>

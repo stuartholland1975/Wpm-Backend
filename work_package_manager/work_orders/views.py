@@ -117,43 +117,9 @@ class OrderLocations(generics.ListAPIView):
                                                                                 IntegerField())), 0))
 
 
-class OrderSummaryInfo(ObjectMultipleModelAPIView):
-    def get_querylist(request, *args, **kwargs):
-        wi = request.kwargs['work_instruction']
-
-        order = OrderHeader.objects.get(pk=wi)
-        worksheet = order.sitelocation_set.all()
-        querylist = [
-            {'queryset': OrderHeader.objects.filter(id=order.id).annotate(order_value=Sum('orderdetail__total_payable'),
-                                                                          item_count=Count('orderdetail__id')).order_by(
-                'id'), 'serializer_class': OrderHeaderSerializer},
-            {'queryset': order.orderdetail_set.all().annotate(
-                qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
-                value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
-                qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
-                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
-                qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'), 0.00)
-            ).order_by('item_number'),
-             'serializer_class': OrderDetailSerializer},
-            {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
-                                                         total_payable=Coalesce(Sum(
-                                                             'orderdetail__total_payable'), 0.00),
-                                                         items_complete=Coalesce(Sum(Cast(
-                                                             'orderdetail__item_complete',
-                                                             IntegerField())), 0.00)).order_by('id'),
-             'serializer_class': SiteLocationSerializer},
-            {'queryset': Image.objects.filter(location__work_instruction=order.work_instruction).order_by(
-                '-image_type'),
-                'serializer_class': ImagesSerializer},
-            {'queryset': Document.objects.filter(work_instruction=order.id),
-             'serializer_class': DocumentSerializer},
-        ]
-        return querylist
-
-
 class WorksheetViewSet(viewsets.ModelViewSet):
-    serializer_class = WorksheetSerializer
     queryset = Worksheet.objects.all()
+    serializer_class = WorksheetSerializer
     filterset_fields = ('applied', 'application_number', 'item_ref__work_instruction',)
 
 
@@ -215,3 +181,73 @@ class ApplicationOrders(generics.ListAPIView):
     def get_queryset(self):
         return OrderHeader.objects.filter(orderdetail__worksheet__applied=True).annotate(
             applied_value=Sum('orderdetail__worksheet__value_complete'))
+
+
+class OrderSummaryInfo(ObjectMultipleModelAPIView):
+    def get_querylist(request, *args, **kwargs):
+        wi = request.kwargs['work_instruction']
+
+        order = OrderHeader.objects.get(pk=wi)
+        worksheet = order.sitelocation_set.all()
+        querylist = [
+            {'queryset': OrderHeader.objects.filter(id=order.id).annotate(order_value=Sum('orderdetail__total_payable'),
+                                                                          item_count=Count('orderdetail__id')).order_by(
+                'id'), 'serializer_class': OrderHeaderSerializer},
+            {'queryset': order.orderdetail_set.all().annotate(
+                qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
+                value_complete=Coalesce(Sum('worksheet__value_complete'), 0.00),
+                qty_applied=Coalesce(Sum('worksheet__qty_complete', filter=Q(worksheet__applied=True)), 0.00),
+                value_applied=Coalesce(Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
+                qty_os=F('qty_ordered') - Coalesce(Sum('worksheet__qty_complete'), 0.00)
+            ).order_by('item_number'),
+             'serializer_class': OrderDetailSerializer},
+            {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
+                                                         total_payable=Coalesce(Sum(
+                                                             'orderdetail__total_payable'), 0.00),
+                                                         items_complete=Coalesce(Sum(Cast(
+                                                             'orderdetail__item_complete',
+                                                             IntegerField())), 0.00)).order_by('id'),
+             'serializer_class': SiteLocationSerializer},
+            {'queryset': Image.objects.filter(location__work_instruction=order.work_instruction).order_by(
+                '-image_type'),
+                'serializer_class': ImagesSerializer},
+            {'queryset': Document.objects.filter(work_instruction=order.id),
+             'serializer_class': DocumentSerializer},
+        ]
+        return querylist
+
+
+class ApplicationInformationView(ObjectMultipleModelAPIView):
+    def get_querylist(self, *args, **kwargs):
+        app_id = self.kwargs['app_number']
+        application = Application.objects.get(app_number=app_id)
+        querylist = [
+            {
+                'queryset': OrderHeader.objects.filter(
+                    orderdetail__worksheet__application_number=application).distinct().annotate(
+                    applied_value=Sum('orderdetail__worksheet__value_complete'),
+                    materials_value=Coalesce(Sum('orderdetail__worksheet__materials_complete'), 0.00),
+                    labour_value=Coalesce(Sum('orderdetail__worksheet__labour_complete'), 0.00)),
+                'serializer_class': OrderHeaderSerializer
+            },
+            {
+                'queryset': SiteLocation.objects.filter(worksheet__application_number=application).distinct().annotate(
+                    applied_value=Sum('worksheet__value_complete'),
+                    materials_value=Coalesce(Sum('worksheet__materials_complete'), 0.00),
+                    labour_value=Coalesce(Sum('worksheet__labour_complete'), 0.00)),
+                'serializer_class': SiteLocationSerializer
+            },
+            {
+                'queryset': OrderDetail.objects.filter(worksheet__application_number=application).distinct().annotate(
+                    applied_value=Coalesce(Sum('worksheet__value_complete'), 0.00),
+                    materials_value=Coalesce(Sum('worksheet__materials_complete'), 0.00),
+                    labour_value=Coalesce(Sum('worksheet__labour_complete'), 0.00),
+                    qty_applied=Sum('worksheet__qty_complete')
+                ), 'serializer_class': OrderDetailSerializer
+            },
+            {
+                'queryset': Image.objects.filter(location__worksheet__application_number=application).distinct(),
+                'serializer_class': ImagesSerializer
+            },
+        ]
+        return querylist
