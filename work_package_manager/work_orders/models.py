@@ -237,11 +237,13 @@ class Image(models.Model):
     camera = models.CharField(editable=False, max_length=100, null=True, blank=True)
     gps_lat = models.CharField(editable=False, max_length=100, null=True, blank=True)
     gps_long = models.CharField(editable=False, max_length=100, null=True, blank=True)
+    gps_position = models.CharField(editable=False, max_length=100, null=True, blank=True)
     gps_date = models.CharField(editable=False, max_length=100, null=True, blank=True)
     date_time_original = models.CharField(editable=False, max_length=100, null=True, blank=True)
     exif = ExifField(source='construction_image',
                      denormalized_fields={'camera': exifgetter('Model'), 'gps_lat': exifgetter('GPSLatitude'),
                                           'gps_long': exifgetter('GPSLongitude'),
+                                          'gps_position': exifgetter('GPSPosition'),
                                           'gps_date': exifgetter('GPSDateTime'),
                                           'date_time_original': exifgetter('DateTimeOriginal'), }, )
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)

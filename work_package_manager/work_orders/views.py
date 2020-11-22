@@ -150,6 +150,7 @@ class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
     queryset = Application.objects.all().order_by('-app_number').annotate(
         application_value=Coalesce(Sum('worksheet__value_complete'), 0.00))
+    filterset_fields = ('app_number',)
 
 
 class CurrentApplication(generics.ListAPIView):
