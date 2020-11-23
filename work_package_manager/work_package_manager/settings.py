@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'work_orders',
+    'work_orders.apps.WorkOrdersConfig',
     'import_export',
     'rest_framework',
     'corsheaders',
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'bulk_api',
+    'test_data',
 ]
 
 MIDDLEWARE = [

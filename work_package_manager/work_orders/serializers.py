@@ -72,11 +72,11 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     area_description = serializers.SerializerMethodField('get_area_description')
     work_type = serializers.SerializerMethodField('get_work_type')
     status_description = serializers.SerializerMethodField('get_status_description')
-    order_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+   # order_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     item_count = serializers.IntegerField(read_only=True)
     issued_date_formatted = serializers.SerializerMethodField('format_date')
     doc_count = serializers.IntegerField(read_only=True)
-    applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+   # applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     labour_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     materials_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
 

@@ -1,8 +1,11 @@
-from django.db import models
 from datetime import datetime
-from model_utils import Choices
+
+from django.db import models
+from django.db.models.signals import pre_save, pre_delete
+from django.dispatch import receiver
 from exiffield.fields import ExifField
 from exiffield.getters import exifgetter
+from model_utils import Choices
 
 
 class ActivityUnits(models.Model):
@@ -67,6 +70,9 @@ class OrderHeader(models.Model):
     start_date = models.DateField(default=datetime.now)
     end_date = models.DateField(default=datetime.now)
     issued_date = models.DateField(default=datetime.now)
+    order_value = models.DecimalField(decimal_places=2, max_digits=12, default=0.00, blank=True)
+    value_complete = models.DecimalField(decimal_places=2, max_digits=12, default=0.00, blank=True)
+    value_applied = models.DecimalField(decimal_places=2, max_digits=12, default=0.00, blank=True)
     notes = models.TextField(blank=True, null=True)
     document_1 = models.FileField(upload_to='documents/', null=True, blank=True, verbose_name='H&S Pack')
     document_2 = models.FileField(upload_to='documents/', null=True, blank=True, verbose_name='Field Docs')
@@ -288,3 +294,24 @@ class RateSetUplifts(models.Model):
                                                       verbose_name="Materials Percentage Uplift")
     date_from = models.DateField(verbose_name="Date Applicable From")
     date_to = models.DateField(verbose_name="Date Applicable To")
+
+
+@receiver(pre_save, sender=OrderDetail)
+def update_order_value(instance, **kwargs):
+    order = OrderHeader.objects.get(work_instruction=instance.work_instruction_id)
+    current_order_value = order.order_value
+    if instance.id:
+        current_item = OrderDetail.objects.get(pk=instance.pk)
+        order.order_value = current_order_value + instance.total_payable - current_item.total_payable
+
+    order.order_value = current_order_value + instance.total_payable
+    return order.save()
+
+
+@receiver(pre_delete, sender=OrderDetail)
+def update_order_value_on_delete(instance, **kwargs):
+    order = OrderHeader.objects.get(work_instruction=instance.work_instruction_id)
+    current_order_value = order.order_value
+    current_item = OrderDetail.objects.get(pk=instance.pk)
+    order.order_value = current_order_value - current_item.total_payable
+    return order.save()

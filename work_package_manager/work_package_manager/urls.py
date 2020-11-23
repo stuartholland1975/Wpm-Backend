@@ -9,4 +9,5 @@ urlpatterns = [
                   path('api/', include('authentication.urls')),
                   path('wpm/', include('work_orders.urls')),
                   path('bulk/', include('bulk_api.urls')),
+                  path('test-data/', include('test_data.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

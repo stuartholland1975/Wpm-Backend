@@ -35,8 +35,9 @@ class ActivityViewSet(viewsets.ModelViewSet):
 
 
 class OrderHeaderViewSet(viewsets.ModelViewSet):
-    queryset = OrderHeader.objects.annotate(order_value=Sum('orderdetail__total_payable'),
-                                            item_count=Count('orderdetail__id')).order_by('id')
+    # queryset = OrderHeader.objects.annotate(order_value=Sum('orderdetail__total_payable'),
+    #                                         item_count=Count('orderdetail__id')).order_by('id')
+    queryset = OrderHeader.objects.all().annotate(item_count=Count('orderdetail__id')).order_by('id')
     serializer_class = OrderHeaderSerializer
     filterset_fields = ('orderdetail__worksheet__application_number',)
 
@@ -191,8 +192,7 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
         order = OrderHeader.objects.get(pk=wi)
         worksheet = order.sitelocation_set.all()
         querylist = [
-            {'queryset': OrderHeader.objects.filter(id=order.id).annotate(order_value=Sum('orderdetail__total_payable'),
-                                                                          item_count=Count('orderdetail__id')).order_by(
+            {'queryset': OrderHeader.objects.filter(id=order.id).annotate(item_count=Count('orderdetail__id')).order_by(
                 'id'), 'serializer_class': OrderHeaderSerializer},
             {'queryset': order.orderdetail_set.all().annotate(
                 qty_complete=Coalesce(Sum('worksheet__qty_complete'), 0.00),
@@ -232,14 +232,14 @@ class ApplicationInformationView(ObjectMultipleModelAPIView):
                 'serializer_class': OrderHeaderSerializer
             },
             {
-                'queryset': SiteLocation.objects.filter(worksheet__application_number=application).distinct().annotate(
+                'queryset': SiteLocation.objects.distinct().filter(worksheet__application_number=application).annotate(
                     applied_value=Sum('worksheet__value_complete'),
                     materials_value=Coalesce(Sum('worksheet__materials_complete'), 0.00),
                     labour_value=Coalesce(Sum('worksheet__labour_complete'), 0.00)),
                 'serializer_class': SiteLocationSerializer
             },
             {
-                'queryset': OrderDetail.objects.filter(worksheet__application_number=application).distinct().annotate(
+                'queryset': OrderDetail.objects.distinct().filter(worksheet__application_number=application).annotate(
                     applied_value=Coalesce(Sum('worksheet__value_complete'), 0.00),
                     materials_value=Coalesce(Sum('worksheet__materials_complete'), 0.00),
                     labour_value=Coalesce(Sum('worksheet__labour_complete'), 0.00),
@@ -247,7 +247,7 @@ class ApplicationInformationView(ObjectMultipleModelAPIView):
                 ), 'serializer_class': OrderDetailSerializer
             },
             {
-                'queryset': Image.objects.filter(location__worksheet__application_number=application).distinct(),
+                'queryset': Image.objects.distinct().filter(location__worksheet__application_number=application),
                 'serializer_class': ImagesSerializer
             },
         ]
