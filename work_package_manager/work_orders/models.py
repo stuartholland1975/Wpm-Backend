@@ -1,11 +1,9 @@
 from datetime import datetime
 
 from django.db import models
-from django.db.models.signals import post_save, pre_save, pre_delete
-from django.dispatch import receiver
 from exiffield.fields import ExifField
 from exiffield.getters import exifgetter
-from model_utils import Choices
+from model_utils import Choices, FieldTracker
 
 
 class ActivityUnits(models.Model):
@@ -79,6 +77,7 @@ class OrderHeader(models.Model):
     document_3 = models.FileField(upload_to='documents/', null=True, blank=True, verbose_name='Field Docs')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+    tracker = FieldTracker()
 
     def __str__(self):
         return f"{self.work_instruction} / {self.project_title}"
@@ -173,6 +172,7 @@ class OrderDetail(models.Model):
     item_complete = models.BooleanField(verbose_name='Item Complete', default=False, )
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    tracker = FieldTracker()
 
     class Meta:
         unique_together = ('work_instruction', 'item_number',)
@@ -219,6 +219,7 @@ class Worksheet(models.Model):
                                            blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    tracker = FieldTracker()
 
     def work_done_date_pretty(self):
         return self.date_work_done.strftime('%d/%m/%Y')

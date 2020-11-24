@@ -24,6 +24,8 @@ django-exiffield = "*"
 djangorestframework-gis = "*"
 djangorestframework-bulk = "*"
 pytest = "*"
+django-q = "*"
+redis = "*"
 
 [requires]
 python_version = "3.8"

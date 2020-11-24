@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django_filters',
     'bulk_api',
     'test_data',
+    'fieldsignals',
+    'django_q',
 ]
 
 MIDDLEWARE = [
