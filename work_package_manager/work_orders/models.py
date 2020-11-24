@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.db import models
-from django.db.models.signals import pre_save, pre_delete
+from django.db.models.signals import post_save, pre_save, pre_delete
 from django.dispatch import receiver
 from exiffield.fields import ExifField
 from exiffield.getters import exifgetter
@@ -294,24 +294,3 @@ class RateSetUplifts(models.Model):
                                                       verbose_name="Materials Percentage Uplift")
     date_from = models.DateField(verbose_name="Date Applicable From")
     date_to = models.DateField(verbose_name="Date Applicable To")
-
-
-@receiver(pre_save, sender=OrderDetail)
-def update_order_value(instance, **kwargs):
-    order = OrderHeader.objects.get(work_instruction=instance.work_instruction_id)
-    current_order_value = order.order_value
-    if instance.id:
-        current_item = OrderDetail.objects.get(pk=instance.pk)
-        order.order_value = current_order_value + instance.total_payable - current_item.total_payable
-
-    order.order_value = current_order_value + instance.total_payable
-    return order.save()
-
-
-@receiver(pre_delete, sender=OrderDetail)
-def update_order_value_on_delete(instance, **kwargs):
-    order = OrderHeader.objects.get(work_instruction=instance.work_instruction_id)
-    current_order_value = order.order_value
-    current_item = OrderDetail.objects.get(pk=instance.pk)
-    order.order_value = current_order_value - current_item.total_payable
-    return order.save()

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from model_utils import Choices
 
@@ -79,9 +79,13 @@ class OrderDetail(models.Model):
         return f"{self.work_instruction} / {self.item_number}"
 
 
-@receiver(post_save, sender=OrderDetail)
-def update_order_value(sender, instance, created, **kwargs):
+@receiver(pre_save, sender=OrderDetail)
+def update_order_value(instance, **kwargs):
     order = OrderHeader.objects.get(work_instruction=instance.work_instruction_id)
     current_order_value = order.order_value
+    if instance.id:
+        current_item = OrderDetail.objects.get(pk=instance.pk)
+        order.order_value = current_order_value + instance.total_payable - current_item.total_payable
+
     order.order_value = current_order_value + instance.total_payable
     return order.save()

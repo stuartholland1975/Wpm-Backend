@@ -76,7 +76,7 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     item_count = serializers.IntegerField(read_only=True)
     issued_date_formatted = serializers.SerializerMethodField('format_date')
     doc_count = serializers.IntegerField(read_only=True)
-   # applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     labour_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     materials_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
 
