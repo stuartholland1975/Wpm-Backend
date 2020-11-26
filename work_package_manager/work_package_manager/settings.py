@@ -98,7 +98,7 @@ DATABASES = {
         'NAME': 'work_package_manager',
         'USER': 'postgres',
         'PASSWORD': '987jmo00',
-        'HOST': '192.168.0.40',
+        'HOST': '192.168.0.4',
         'PORT': '5432',
     }
 }

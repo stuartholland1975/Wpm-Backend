@@ -172,7 +172,10 @@ class CurrentApplication(generics.ListAPIView):
 
 class AreaViewSet(viewsets.ModelViewSet):
     serializer_class = AreaSerializer
-    queryset = Area.objects.all()
+    queryset = Area.objects.all().annotate(order_value=Coalesce(Sum('orderheader__order_value'), 0.00),
+                                           applied_value=Coalesce(Sum('orderheader__value_applied'), 0.00),
+                                           complete_value=Coalesce(Sum('orderheader__value_complete'), 0.00)).order_by(
+        'id')
 
 
 class WorkTypesViewSet(viewsets.ModelViewSet):
@@ -212,9 +215,9 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
                 value_applied=Coalesce(
                     Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
                 qty_os=F('qty_ordered') -
-                Coalesce(Sum('worksheet__qty_complete'), 0.00)
+                       Coalesce(Sum('worksheet__qty_complete'), 0.00)
             ).order_by('item_number'),
-                'serializer_class': OrderDetailSerializer},
+             'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
                                                          total_payable=Coalesce(Sum(
                                                              'orderdetail__total_payable'), 0.00),
