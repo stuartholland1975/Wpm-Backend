@@ -37,10 +37,10 @@ class SiteLocationSerializer(BulkSerializerMixin, serializers.ModelSerializer):
 
 
 
-class OrderDetailSerializer(serializers.ModelSerializer):
+class OrderDetailSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     class Meta(object):
         model = OrderDetail
-        read_only_fields = ('id',)
+        list_serializer_class = BulkListSerializer
         fields = '__all__'
 
 

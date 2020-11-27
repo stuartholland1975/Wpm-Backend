@@ -46,6 +46,10 @@ class WorksheetBulkViewSet(BulkModelViewSet):
 class SiteLocationBulkViewSet(BulkModelViewSet):
     queryset = SiteLocation.objects.all()
     serializer_class = SiteLocationSerializer
+
+class OrderDetailBulkViewSet(BulkModelViewSet):
+    queryset = OrderDetail.objects.all()
+    serializer_class = OrderDetailSerializer
     
 
 
