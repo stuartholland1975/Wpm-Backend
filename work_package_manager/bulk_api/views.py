@@ -5,8 +5,8 @@ from rest_framework_bulk import (
     BulkModelViewSet
 )
 
-from .serializers import WorksheetSerializer, OrderDetailSerializer, TaskSerializer
-from work_orders.models import OrderDetail, Worksheet
+from .serializers import SiteLocationSerializer, WorksheetSerializer, OrderDetailSerializer, TaskSerializer
+from work_orders.models import OrderDetail, Worksheet, SiteLocation
 
 
 class BulkMixin:
@@ -41,6 +41,12 @@ class WorksheetBulkViewSet(BulkModelViewSet):
     queryset = Worksheet.objects.all()
     serializer_class = WorksheetSerializer
     filterset_fields = ('applied', 'application_number', 'item_ref__work_instruction',)
+
+
+class SiteLocationBulkViewSet(BulkModelViewSet):
+    queryset = SiteLocation.objects.all()
+    serializer_class = SiteLocationSerializer
+    
 
 
 class TaskUpdateView(generics.UpdateAPIView):

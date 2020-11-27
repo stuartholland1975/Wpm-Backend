@@ -1,6 +1,7 @@
 import calendar
 import datetime
 from math import ceil
+from django.db.models import Sum, Count, IntegerField, Q, F
 from rest_framework import serializers
 from rest_framework_bulk import (
     BulkListSerializer,
@@ -126,6 +127,7 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     labour_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     materials_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    document_count = serializers.SerializerMethodField('get_document_count')
 
     def get_work_type(self, obj):
         return obj.project_type.work_type_description
@@ -138,6 +140,9 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
 
     def format_date(self, obj):
         return obj.issued_date.strftime('%d/%m/%Y')
+
+    def get_document_count(self, obj):
+        return Document.objects.filter(work_instruction=obj.id).aggregate(document_count=Count('id'))
 
     class Meta:
         model = OrderHeader

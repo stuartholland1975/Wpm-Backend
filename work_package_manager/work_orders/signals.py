@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from fieldsignals import pre_save_changed, post_save_changed
 from django_q.tasks import async_task
 
-from .models import OrderDetail, OrderHeader, Worksheet
+from .models import OrderDetail, OrderHeader, Worksheet, SiteLocation
 
 
 # @receiver(pre_save, sender=OrderDetail)
@@ -47,6 +47,15 @@ def update_order_complete_value(instance, created, **kwargs):
             work_instruction=item.work_instruction_id)
         order.value_complete = order.value_complete + instance.value_complete
         order.save()
+
+
+@receiver(post_save, sender=SiteLocation)
+def update_worksheet_ref(instance, created, **kwargs):
+    if created:
+        instance.worksheet_ref = f"{instance.work_instruction_id}/{instance.id}"
+        instance.save()
+
+        
 
 
 """ def update_applied_value(instance):

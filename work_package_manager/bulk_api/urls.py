@@ -6,6 +6,7 @@ from . import views
 
 router = BulkRouter()
 router.register('bulk-worksheets', views.WorksheetBulkViewSet)
+router.register('bulk-locations', views.SiteLocationBulkViewSet)
 # router.register('bulk-items', views.OrderDetailBulkViewSet)
 
 urlpatterns = [

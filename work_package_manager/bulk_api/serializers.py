@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from rest_framework import serializers
 from rest_framework_bulk.drf3.serializers import BulkSerializerMixin, BulkListSerializer
 
-from work_orders.models import OrderHeader, Worksheet, OrderDetail
+from work_orders.models import OrderHeader, Worksheet, OrderDetail, SiteLocation
 
 from bulk_api.models import Project, Task
 
@@ -26,6 +26,15 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
         list_serializer_class = BulkListSerializer
         update_lookup_field = 'id'
         fields = '__all__'
+
+
+class SiteLocationSerializer(BulkSerializerMixin, serializers.ModelSerializer):
+    class Meta(object):
+        model = SiteLocation
+        list_serializer_class = BulkListSerializer
+        update_lookup_field = 'id'
+        fields = '__all__'
+
 
 
 class OrderDetailSerializer(serializers.ModelSerializer):
