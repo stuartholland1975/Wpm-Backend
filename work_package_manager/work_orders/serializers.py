@@ -1,3 +1,6 @@
+import calendar
+import datetime
+from math import ceil
 from rest_framework import serializers
 from rest_framework_bulk import (
     BulkListSerializer,
@@ -30,11 +33,39 @@ class WorkTypeSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+def week_of_month(date):
+    """Determines the week (number) of the month"""
+
+    #Calendar object. 6 = Start on Sunday, 0 = Start on Monday
+    cal_object = calendar.Calendar(6)
+    month_calendar_dates = cal_object.itermonthdates(date.year,date.month)
+
+    day_of_week = 1
+    week_number = 1
+
+    for day in month_calendar_dates:
+        #add a week and reset day of week
+        if day_of_week > 7:
+            week_number += 1
+            day_of_week = 1
+
+        if date == day:
+            break
+        else:
+            day_of_week += 1
+
+    return week_number
+
+
 class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     order_ref = serializers.SerializerMethodField('get_work_instruction')
     item_number = serializers.SerializerMethodField('get_item_number')
     location_ref = serializers.SerializerMethodField('get_location_ref')
     supervisor_name = serializers.SerializerMethodField("get_supervisor_name")
+    week_number = serializers.SerializerMethodField("get_week_ref")
+    week_of_month = serializers.SerializerMethodField('get_week_month_ref')
+    date_refs = serializers.SerializerMethodField('get_date_refs')
+    iso_week_number = serializers.SerializerMethodField('get_iso_week_ref')
 
     def get_supervisor_name(self, obj):
         return f"{obj.completed_by.first_name + '  ' + obj.completed_by.surname}"
@@ -47,6 +78,18 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
 
     def get_location_ref(self, obj):
         return obj.worksheet_ref.location_ref
+
+    def get_week_ref(self, obj):
+        return datetime.datetime.strftime(obj.date_work_done, "%W")
+
+    def get_iso_week_ref(self, obj):
+        return datetime.datetime.strftime(obj.date_work_done, "%V")
+
+    def get_week_month_ref(self, obj):
+        return obj.date_work_done.isocalendar()[1] - obj.date_work_done.replace(day=1).isocalendar()[1] + 1
+
+    def get_date_refs(self, obj):
+        return datetime.datetime.strftime(obj.date_work_done, "%Y W%W w%w %a %b")
 
     class Meta:
         model = Worksheet

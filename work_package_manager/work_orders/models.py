@@ -1,5 +1,6 @@
 from datetime import datetime
-
+import calendar
+from datetime import timedelta
 from django.db import models
 from exiffield.fields import ExifField
 from exiffield.getters import exifgetter

@@ -125,11 +125,19 @@ class OrderLocations(generics.ListAPIView):
                                                                                 IntegerField())), 0))
 
 
+class WorksheetFilter(filters.FilterSet):
+    work_done_gte = filters.DateFilter(field_name='date_work_done', lookup_expr='gte')
+
+    class Meta:
+        model = Worksheet
+        fields = ['applied', 'application_number',
+                  'item_ref__work_instruction', 'work_done_gte', ]
+
+
 class WorksheetViewSet(viewsets.ModelViewSet):
     queryset = Worksheet.objects.all()
     serializer_class = WorksheetSerializer
-    filterset_fields = ('applied', 'application_number',
-                        'item_ref__work_instruction',)
+    filter_class = WorksheetFilter
 
 
 class NumberInFilter(filters.BaseInFilter, filters.NumberFilter):
@@ -274,3 +282,10 @@ class ApplicationInformationView(ObjectMultipleModelAPIView):
             },
         ]
         return querylist
+
+
+class WorkDone(generics.ListAPIView):
+    serializer_class = WorksheetSerializer
+
+    def get_queryset(self):
+        return Worksheet.objects.all()
