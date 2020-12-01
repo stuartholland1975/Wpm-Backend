@@ -303,7 +303,7 @@ class WorkDoneWeeks(APIView):
 
     def get(self, request, format=None):
         week_numbers = Worksheet.objects.values(
-            'iso_week', 'iso_year').distinct().order_by('iso_week')
+            'iso_week', 'iso_year', 'date_work_done').distinct().order_by('iso_week')
         return Response(week_numbers)
 
 

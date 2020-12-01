@@ -1,7 +1,7 @@
 import calendar
 import datetime
-from math import ceil
-from django.db.models import Sum, Count, IntegerField, Q, F
+
+from django.db.models import Count
 from rest_framework import serializers
 from rest_framework_bulk import (
     BulkListSerializer,
@@ -68,7 +68,8 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     supervisor_name = serializers.SerializerMethodField("get_supervisor_name")
     week_number = serializers.SerializerMethodField("get_week_ref")
     week_of_month = serializers.SerializerMethodField('get_week_month_ref')
-
+    work_type = serializers.SerializerMethodField('get_work_type')
+    area_description = serializers.SerializerMethodField('get_area_description')
     area = serializers.SerializerMethodField('get_area')
 
     def get_supervisor_name(self, obj):
@@ -91,6 +92,12 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
 
     def get_area(self, obj):
         return obj.worksheet_ref.work_instruction.area_id
+
+    def get_area_description(self, obj):
+        return obj.worksheet_ref.work_instruction.area.area_description
+
+    def get_work_type(self, obj):
+        return obj.worksheet_ref.work_instruction.project_type.work_type_description
 
     class Meta:
         model = Worksheet
