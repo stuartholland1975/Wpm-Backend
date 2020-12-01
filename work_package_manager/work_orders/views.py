@@ -3,6 +3,8 @@ from django.db.models.functions import Coalesce, Cast
 from django_filters import rest_framework as filters
 from drf_multiple_model.views import ObjectMultipleModelAPIView
 from rest_framework import viewsets, generics, permissions
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
     SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
@@ -228,9 +230,9 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
                 value_applied=Coalesce(
                     Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
                 qty_os=F('qty_ordered') -
-                Coalesce(Sum('worksheet__qty_complete'), 0.00)
+                       Coalesce(Sum('worksheet__qty_complete'), 0.00)
             ).order_by('item_number'),
-                'serializer_class': OrderDetailSerializer},
+             'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
                                                          total_payable=Coalesce(Sum(
                                                              'orderdetail__total_payable'), 0.00),
@@ -294,3 +296,11 @@ class WorkDone(generics.ListAPIView):
 
     def get_queryset(self):
         return Worksheet.objects.all()
+
+
+class WorkDoneWeeks(APIView):
+    serializer_class = WorksheetSerializer
+
+    def get(self, request, format=None):
+        week_numbers = Worksheet.objects.values('iso_week', 'iso_year').distinct().order_by('iso_week')
+        return Response(week_numbers)

@@ -17,13 +17,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/WeeklyWorkDoneBySupervisor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/WeeklyWorkDoneByWorkInstruction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/activities/ActivityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/activities/ActivityList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationBillItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationBillItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationInstructionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationInstructionsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/forms/MuiAutoComplete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/WpmModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/WpmModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/componentsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/componentsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/axiosApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/axiosApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationLocations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/bill-items/BillItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/bill-items/BillItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/WeeklyWorkDoneByArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/WeeklyWorkDoneByArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/documents/DocumentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/documents/DocumentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/documents/DocumentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/documents/DocumentsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/CustomLoadingOverlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/CustomLoadingOverlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/CustomNoRowsOverlay2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/CustomNoRowsOverlay2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/SimpleEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/grid/SimpleEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/images/ApplicationImages.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/images/ApplicationImages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/images/ImageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/images/ImageForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/images/LocationImages.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/images/LocationImages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/import-data/ImportInstructionData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/import-data/ImportInstructionData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/test/ReChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/ReChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/InstructionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/InstructionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/WpmLogo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/WpmLogo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/Workload.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/Workload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorkProgressTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorkProgressTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +90,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../wpm-frontend" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -79,7 +116,7 @@
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/httpRequests/2020-11-27T021711.400.json&#10;/home/developer/Wpm/wpm-backend/.idea/httpRequests/2020-11-27T025410.200.json" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wpm-frontend/src/components/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wpm-frontend/src/components/charts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -99,13 +136,14 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../wpm-frontend/src/components/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../wpm-frontend/src/components/applications" />
       <recent name="$PROJECT_DIR$/../wpm-frontend/src/services/data" />
       <recent name="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../wpm-frontend/src/components/charts" />
+      <recent name="$PROJECT_DIR$/../wpm-frontend/src/components/images" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -1078,6 +1116,8 @@
       <workItem from="1606241951936" duration="5209000" />
       <workItem from="1606416906499" duration="40902000" />
       <workItem from="1606460757639" duration="3381000" />
+      <workItem from="1606798174913" duration="605000" />
+      <workItem from="1606799188747" duration="10906000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>
@@ -1198,7 +1238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606462328278</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="01122020">
+      <created>1606798479272</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1606798479272</updated>
+    </task>
+    <task id="LOCAL-00019" summary="0112020">
+      <created>1606799239251</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606799239251</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1229,7 +1283,9 @@
     <MESSAGE value="29112020" />
     <MESSAGE value="26112020" />
     <MESSAGE value="27112020" />
-    <option name="LAST_COMMIT_MESSAGE" value="27112020" />
+    <MESSAGE value="01122020" />
+    <MESSAGE value="0112020" />
+    <option name="LAST_COMMIT_MESSAGE" value="0112020" />
   </component>
   <component name="WindowStateProjectService">
     <state x="445" y="68" key="#Inspections" timestamp="1605974238898">
@@ -1285,29 +1341,37 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="742" y="265" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1605474699638" />
-    <state width="1318" height="253" key="GridCell.Tab.0.bottom" timestamp="1606464150319">
-      <screen x="0" y="0" width="1364" height="732" />
+    <state width="769" height="893" key="GridCell.Tab.0.bottom" timestamp="1606804404477">
+      <screen x="0" y="59" width="1920" height="1080" />
     </state>
     <state width="1318" height="253" key="GridCell.Tab.0.bottom/0.0.1364.732@0.0.1364.732" timestamp="1606464150319" />
-    <state width="866" height="893" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1606446810638" />
+    <state width="769" height="893" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1606798609730" />
+    <state width="769" height="893" key="GridCell.Tab.0.bottom/0.0.3840.1103@0.0.3840.1103" timestamp="1606798803325" />
+    <state width="769" height="893" key="GridCell.Tab.0.bottom/0.59.1920.1080/1920.0.1920.1080@0.59.1920.1080" timestamp="1606804404477" />
     <state width="1227" height="863" key="GridCell.Tab.0.bottom/0.60.1920.1080/1920.0.1920.1080@0.60.1920.1080" timestamp="1606165380732" />
-    <state width="1318" height="253" key="GridCell.Tab.0.center" timestamp="1606464150318">
-      <screen x="0" y="0" width="1364" height="732" />
+    <state width="769" height="893" key="GridCell.Tab.0.center" timestamp="1606804404477">
+      <screen x="0" y="59" width="1920" height="1080" />
     </state>
     <state width="1318" height="253" key="GridCell.Tab.0.center/0.0.1364.732@0.0.1364.732" timestamp="1606464150318" />
-    <state width="866" height="893" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1606446810637" />
+    <state width="769" height="893" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1606798609729" />
+    <state width="769" height="893" key="GridCell.Tab.0.center/0.0.3840.1103@0.0.3840.1103" timestamp="1606798803324" />
+    <state width="769" height="893" key="GridCell.Tab.0.center/0.59.1920.1080/1920.0.1920.1080@0.59.1920.1080" timestamp="1606804404477" />
     <state width="1227" height="863" key="GridCell.Tab.0.center/0.60.1920.1080/1920.0.1920.1080@0.60.1920.1080" timestamp="1606165380732" />
-    <state width="1318" height="253" key="GridCell.Tab.0.left" timestamp="1606464150318">
-      <screen x="0" y="0" width="1364" height="732" />
+    <state width="769" height="893" key="GridCell.Tab.0.left" timestamp="1606804404477">
+      <screen x="0" y="59" width="1920" height="1080" />
     </state>
     <state width="1318" height="253" key="GridCell.Tab.0.left/0.0.1364.732@0.0.1364.732" timestamp="1606464150318" />
-    <state width="866" height="893" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1606446810636" />
+    <state width="769" height="893" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1606798609725" />
+    <state width="769" height="893" key="GridCell.Tab.0.left/0.0.3840.1103@0.0.3840.1103" timestamp="1606798803323" />
+    <state width="769" height="893" key="GridCell.Tab.0.left/0.59.1920.1080/1920.0.1920.1080@0.59.1920.1080" timestamp="1606804404477" />
     <state width="1227" height="863" key="GridCell.Tab.0.left/0.60.1920.1080/1920.0.1920.1080@0.60.1920.1080" timestamp="1606165380732" />
-    <state width="1318" height="253" key="GridCell.Tab.0.right" timestamp="1606464150318">
-      <screen x="0" y="0" width="1364" height="732" />
+    <state width="769" height="893" key="GridCell.Tab.0.right" timestamp="1606804404477">
+      <screen x="0" y="59" width="1920" height="1080" />
     </state>
     <state width="1318" height="253" key="GridCell.Tab.0.right/0.0.1364.732@0.0.1364.732" timestamp="1606464150318" />
-    <state width="866" height="893" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1606446810637" />
+    <state width="769" height="893" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1606798609729" />
+    <state width="769" height="893" key="GridCell.Tab.0.right/0.0.3840.1103@0.0.3840.1103" timestamp="1606798803325" />
+    <state width="769" height="893" key="GridCell.Tab.0.right/0.59.1920.1080/1920.0.1920.1080@0.59.1920.1080" timestamp="1606804404477" />
     <state width="1227" height="863" key="GridCell.Tab.0.right/0.60.1920.1080/1920.0.1920.1080@0.60.1920.1080" timestamp="1606165380732" />
     <state width="1318" height="253" key="GridCell.Tab.1.bottom" timestamp="1606464150320">
       <screen x="0" y="0" width="1364" height="732" />
@@ -1428,10 +1492,11 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="768" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1044@0.0.1920.1044" timestamp="1604797703768" />
-    <state x="664" y="130" width="646" height="783" key="find.popup" timestamp="1605655309212">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state x="664" y="193" width="646" height="810" key="find.popup" timestamp="1606805204550">
+      <screen x="0" y="59" width="1920" height="1080" />
     </state>
     <state x="664" y="130" width="646" height="783" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1605655309212" />
+    <state x="664" y="193" width="646" height="810" key="find.popup/0.59.1920.1080/1920.0.1920.1080@0.59.1920.1080" timestamp="1606805204550" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1604677981372">
       <screen x="0" y="0" width="1364" height="732" />
     </state>

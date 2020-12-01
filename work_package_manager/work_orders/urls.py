@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
+
 from . import views
-from rest_framework_bulk.routes import BulkRouter
 
 router = routers.DefaultRouter()
 router.register('activity', views.ActivityViewSet)
@@ -24,12 +24,13 @@ urlpatterns = [
 
     path('orders/summary/<int:work_instruction>', views.OrderSummaryInfo.as_view(), name='order-summary-info'),
     path('orders/locations/<int:work_instruction>', views.OrderLocations.as_view()),
+    path('orders/workload/weeks', views.WorkDoneWeeks.as_view()),
     path('orders/workload', views.WorkDone.as_view()),
+
     path('activity/info', views.ActivityInfo.as_view(), name='activity-info'),
     path('orderdetail/item/<int:id>', views.OrderItem.as_view()),
     path('commercial/applications/orders/', views.ApplicationOrders.as_view()),
     path('commercial/applications/current', views.CurrentApplication.as_view()),
     path('commercial/application/detail/<int:app_number>', views.ApplicationInformationView.as_view()),
-
 
 ]
