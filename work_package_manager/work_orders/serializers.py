@@ -90,7 +90,7 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
         return obj.date_work_done.isocalendar()[1] - obj.date_work_done.replace(day=1).isocalendar()[1] + 1
 
     def get_date_refs(self, obj):
-        return datetime.datetime.strftime(obj.date_work_done, "%Y W%W w%w %a %b")
+        return datetime.datetime.strftime(obj.date_work_done, "%Y")
 
     class Meta:
         model = Worksheet
