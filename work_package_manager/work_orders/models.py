@@ -218,6 +218,8 @@ class Worksheet(models.Model):
 
     application_number = models.ForeignKey(Application, to_field='app_number', on_delete=models.PROTECT, null=True,
                                            blank=True)
+    iso_week = models.IntegerField(blank=True, null=True)
+    iso_year = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     tracker = FieldTracker()

@@ -3,6 +3,7 @@ from django.db.models.signals import post_save, pre_delete, pre_save
 from django.dispatch import receiver
 from fieldsignals import pre_save_changed, post_save_changed
 from django_q.tasks import async_task
+import datetime
 
 from .models import OrderDetail, OrderHeader, Worksheet, SiteLocation
 
@@ -37,6 +38,14 @@ def update_order_value_on_delete(instance, **kwargs):
     current_item = OrderDetail.objects.get(pk=instance.pk)
     order.order_value = current_order_value - current_item.total_payable
     return order.save()
+
+
+@receiver(pre_save, sender=Worksheet)
+def update_iso_info(instance, **kwargs):
+    if not instance.id:
+        instance.iso_week = datetime.datetime.strftime(instance.date_work_done, "%V")
+        instance.iso_year = datetime.datetime.strftime(instance.date_work_done, "%Y")
+
 
 
 @receiver(post_save, sender=Worksheet)

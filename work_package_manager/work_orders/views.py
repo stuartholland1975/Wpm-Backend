@@ -126,12 +126,16 @@ class OrderLocations(generics.ListAPIView):
 
 
 class WorksheetFilter(filters.FilterSet):
-    work_done_gte = filters.DateFilter(field_name='date_work_done', lookup_expr='gte')
+    work_done_gte = filters.DateFilter(
+        field_name='date_work_done', lookup_expr='gte')
+    work_done_week_gte = filters.NumberFilter(
+        field_name='iso_week', lookup_expr='gte'
+    )
 
     class Meta:
         model = Worksheet
         fields = ['applied', 'application_number',
-                  'item_ref__work_instruction', 'work_done_gte', ]
+                  'item_ref__work_instruction', 'work_done_gte', 'iso_week', 'iso_year', 'work_done_week_gte', ]
 
 
 class WorksheetViewSet(viewsets.ModelViewSet):
@@ -181,7 +185,8 @@ class CurrentApplication(generics.ListAPIView):
 class AreaViewSet(viewsets.ModelViewSet):
     serializer_class = AreaSerializer
     queryset = Area.objects.all().annotate(order_value=Coalesce(Sum('orderheader__order_value'), 0.00),
-                                           applied_value=Coalesce(Sum('orderheader__value_applied'), 0.00),
+                                           applied_value=Coalesce(
+                                               Sum('orderheader__value_applied'), 0.00),
                                            complete_value=Coalesce(Sum('orderheader__value_complete'), 0.00)).order_by(
         'id')
 
@@ -223,9 +228,9 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
                 value_applied=Coalesce(
                     Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
                 qty_os=F('qty_ordered') -
-                       Coalesce(Sum('worksheet__qty_complete'), 0.00)
+                Coalesce(Sum('worksheet__qty_complete'), 0.00)
             ).order_by('item_number'),
-             'serializer_class': OrderDetailSerializer},
+                'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
                                                          total_payable=Coalesce(Sum(
                                                              'orderdetail__total_payable'), 0.00),

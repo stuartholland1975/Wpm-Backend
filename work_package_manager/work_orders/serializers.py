@@ -19,9 +19,12 @@ class ActivityUnitSerializer(serializers.ModelSerializer):
 
 
 class AreaSerializer(serializers.ModelSerializer):
-    order_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    complete_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    order_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    applied_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    complete_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
 
     class Meta:
         model = Area
@@ -37,15 +40,15 @@ class WorkTypeSerializer(serializers.ModelSerializer):
 def week_of_month(date):
     """Determines the week (number) of the month"""
 
-    #Calendar object. 6 = Start on Sunday, 0 = Start on Monday
+    # Calendar object. 6 = Start on Sunday, 0 = Start on Monday
     cal_object = calendar.Calendar(6)
-    month_calendar_dates = cal_object.itermonthdates(date.year,date.month)
+    month_calendar_dates = cal_object.itermonthdates(date.year, date.month)
 
     day_of_week = 1
     week_number = 1
 
     for day in month_calendar_dates:
-        #add a week and reset day of week
+        # add a week and reset day of week
         if day_of_week > 7:
             week_number += 1
             day_of_week = 1
@@ -65,8 +68,8 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     supervisor_name = serializers.SerializerMethodField("get_supervisor_name")
     week_number = serializers.SerializerMethodField("get_week_ref")
     week_of_month = serializers.SerializerMethodField('get_week_month_ref')
-    date_refs = serializers.SerializerMethodField('get_date_refs')
-    iso_week_number = serializers.SerializerMethodField('get_iso_week_ref')
+
+    area = serializers.SerializerMethodField('get_area')
 
     def get_supervisor_name(self, obj):
         return f"{obj.completed_by.first_name + '  ' + obj.completed_by.surname}"
@@ -83,14 +86,11 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     def get_week_ref(self, obj):
         return datetime.datetime.strftime(obj.date_work_done, "%W")
 
-    def get_iso_week_ref(self, obj):
-        return datetime.datetime.strftime(obj.date_work_done, "%V")
-
     def get_week_month_ref(self, obj):
         return obj.date_work_done.isocalendar()[1] - obj.date_work_done.replace(day=1).isocalendar()[1] + 1
 
-    def get_date_refs(self, obj):
-        return datetime.datetime.strftime(obj.date_work_done, "%Y")
+    def get_area(self, obj):
+        return obj.worksheet_ref.work_instruction.area_id
 
     class Meta:
         model = Worksheet
@@ -105,7 +105,8 @@ class SupervisorSerializer(serializers.ModelSerializer):
 
 
 class ActivitySerializer(serializers.ModelSerializer):
-    unit_description = serializers.SerializerMethodField('get_unit_description')
+    unit_description = serializers.SerializerMethodField(
+        'get_unit_description')
 
     def get_unit_description(self, obj):
         return obj.unit.unit_description
@@ -117,16 +118,21 @@ class ActivitySerializer(serializers.ModelSerializer):
 
 
 class OrderHeaderSerializer(serializers.ModelSerializer):
-    area_description = serializers.SerializerMethodField('get_area_description')
+    area_description = serializers.SerializerMethodField(
+        'get_area_description')
     work_type = serializers.SerializerMethodField('get_work_type')
-    status_description = serializers.SerializerMethodField('get_status_description')
+    status_description = serializers.SerializerMethodField(
+        'get_status_description')
     # order_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     item_count = serializers.IntegerField(read_only=True)
     issued_date_formatted = serializers.SerializerMethodField('format_date')
     doc_count = serializers.IntegerField(read_only=True)
-    applied_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    labour_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    materials_value = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    applied_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    labour_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    materials_value = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
     document_count = serializers.SerializerMethodField('get_document_count')
 
     def get_work_type(self, obj):
@@ -153,14 +159,20 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
 class OrderDetailSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     site_location = serializers.SerializerMethodField('get_site_location')
     activity_code = serializers.SerializerMethodField('get_activity_code')
-    activity_description = serializers.SerializerMethodField('get_activity_description')
+    activity_description = serializers.SerializerMethodField(
+        'get_activity_description')
     worksheet_ref = serializers.SerializerMethodField('get_worksheet_ref')
     project_title = serializers.SerializerMethodField('get_project_title')
-    qty_complete = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    value_complete = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    qty_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    value_applied = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    qty_os = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    qty_complete = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    value_complete = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    qty_applied = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    value_applied = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
+    qty_os = serializers.DecimalField(
+        max_digits=12, decimal_places=2, read_only=True)
     applied_value = serializers.FloatField(read_only=True)
     labour_value = serializers.FloatField(read_only=True)
     materials_value = serializers.FloatField(read_only=True)
