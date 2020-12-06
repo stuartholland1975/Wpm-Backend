@@ -9,7 +9,7 @@ from rest_framework_bulk import (
 )
 
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
+    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts, SubmittedApplication
 
 
 class ActivityUnitSerializer(serializers.ModelSerializer):
@@ -255,4 +255,10 @@ class ApplicationSerializer(serializers.ModelSerializer):
 class RateSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = RateSetUplifts
+        fields = '__all__'
+
+
+class SubmittedApplicationsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubmittedApplication
         fields = '__all__'

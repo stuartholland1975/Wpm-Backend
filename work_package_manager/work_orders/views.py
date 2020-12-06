@@ -7,12 +7,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
+    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts, SubmittedApplication
 from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, \
     OrderDetailSerializer, \
     SiteLocationSerializer, OrderStatusSerializer, WorkTypeSerializer, WorksheetSerializer, \
     SupervisorSerializer, \
-    ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
+    ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer, SubmittedApplicationsSerializer
 
 
 class CharInFilter(filters.BaseInFilter, filters.CharFilter):
@@ -201,6 +201,12 @@ class WorkTypesViewSet(viewsets.ModelViewSet):
 class RateSetViewSet(viewsets.ModelViewSet):
     serializer_class = RateSetSerializer
     queryset = RateSetUplifts.objects.all()
+
+
+class SubmittedApplicationsViewSet(viewsets.ModelViewSet):
+    serializer_class = SubmittedApplicationsSerializer
+    queryset = SubmittedApplication.objects.all()
+    filterset_fields = ('application_id',)
 
 
 class ApplicationOrders(generics.ListAPIView):
