@@ -362,9 +362,3 @@ class RateSetUplifts(models.Model):
     date_to = models.DateField(verbose_name="Date Applicable To")
 
 
-class SubmittedApplication(models.Model):
-    application_id = models.ForeignKey(Application, to_field='app_number', on_delete=models.PROTECT)
-    application_data = JSONField()
-
-    def __str__(self):
-        return self.application_id.app_ref
