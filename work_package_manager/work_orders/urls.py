@@ -18,7 +18,7 @@ router.register('orderstatus', views.OrderStatusViewSet)
 router.register('areas', views.AreaViewSet)
 router.register('worktypes', views.WorkTypesViewSet)
 router.register('ratesets', views.RateSetViewSet)
-router.register('submitted-applications', views.SubmittedApplicationsViewSet)
+
 
 urlpatterns = [
     path('api/', include(router.urls)),

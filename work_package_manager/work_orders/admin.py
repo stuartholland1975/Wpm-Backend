@@ -1,17 +1,13 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from .models import Activity, ActivityUnits, OrderHeader, OrderStatus, Area, SiteLocation, OrderDetail, Worksheet, \
-    WorkType, SuperVisor, ConstructionImage, Application, Image, Post, Document, RateSetUplifts, SubmittedApplication
+    WorkType, SuperVisor, ConstructionImage, Application, Image, Post, Document, RateSetUplifts
 
 
 @admin.register(Activity)
 class ActivityAdmin(ImportExportModelAdmin):
     pass
 
-
-@admin.register(SubmittedApplication)
-class SubmittedApplication(ImportExportModelAdmin):
-    pass
 
 
 @admin.register(ActivityUnits)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="10" />
+    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -17,19 +17,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/_template__of_Chromium_Remote.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/orderSummaryData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/locations/LocationList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorkProgressTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorkProgressTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -987,7 +985,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Django Server.WPM">
     <configuration name="Unnamed" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" nameIsGenerated="true" host="192.168.0.4" port="3000" restartOnDisconnect="true">
       <method v="2" />
     </configuration>
@@ -1113,6 +1111,7 @@
       <workItem from="1607112876177" duration="514000" />
       <workItem from="1607122907698" duration="137000" />
       <workItem from="1607123562983" duration="2819000" />
+      <workItem from="1607234879726" duration="4683000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>
@@ -1316,8 +1315,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js</url>
-          <line>142</line>
-          <properties lambdaOrdinal="-1" />
+          <line>143</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
