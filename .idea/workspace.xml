@@ -17,17 +17,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Wpm_In_Chrome_Local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Wpm_In_Chrome_Network.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationsSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.vagrant" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -985,10 +985,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django Server.WPM">
-    <configuration name="Unnamed" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" nameIsGenerated="true" host="192.168.0.4" port="3000" restartOnDisconnect="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.Wpm In Chrome Local">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="wpm-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1046,8 +1043,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Attach to Node.js/Chrome.Unnamed" />
       <item itemvalue="Django Server.WPM" />
+      <item itemvalue="JavaScript Debug.Wpm In Chrome Local" />
+      <item itemvalue="JavaScript Debug.Wpm In Chrome Network" />
       <item itemvalue="npm.start" />
     </list>
   </component>
@@ -1112,6 +1110,7 @@
       <workItem from="1607122907698" duration="137000" />
       <workItem from="1607123562983" duration="2819000" />
       <workItem from="1607234879726" duration="4683000" />
+      <workItem from="1607383707526" duration="10513000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>

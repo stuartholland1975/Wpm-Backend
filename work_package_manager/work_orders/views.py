@@ -258,6 +258,9 @@ class ApplicationInformationView(ObjectMultipleModelAPIView):
         application = Application.objects.get(app_number=app_id)
         querylist = [
             {
+                'queryset': Application.objects.filter(id=application.id), 'serializer_class': ApplicationSerializer
+            },
+            {
                 'queryset': OrderHeader.objects.filter(
                     orderdetail__worksheet__application_number=application).distinct().annotate(
                     applied_value=Sum(

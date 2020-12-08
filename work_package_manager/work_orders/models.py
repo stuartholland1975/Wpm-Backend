@@ -1,11 +1,10 @@
 from datetime import datetime
-import calendar
-from datetime import timedelta
+
 from django.db import models
+from django.db.models import JSONField
 from exiffield.fields import ExifField
 from exiffield.getters import exifgetter
-from model_utils import Choices, FieldTracker 
-from django.db.models import JSONField
+from model_utils import Choices, FieldTracker
 
 
 class ActivityUnits(models.Model):
@@ -360,5 +359,3 @@ class RateSetUplifts(models.Model):
                                                       verbose_name="Materials Percentage Uplift")
     date_from = models.DateField(verbose_name="Date Applicable From")
     date_to = models.DateField(verbose_name="Date Applicable To")
-
-
