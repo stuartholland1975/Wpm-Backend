@@ -28,13 +28,18 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
         fields = '__all__'
 
 
+class WorksheetBulkUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Worksheet
+        fields = '__all__'
+
+
 class SiteLocationSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     class Meta(object):
         model = SiteLocation
         list_serializer_class = BulkListSerializer
         update_lookup_field = 'id'
         fields = '__all__'
-
 
 
 class OrderDetailSerializer(BulkSerializerMixin, serializers.ModelSerializer):

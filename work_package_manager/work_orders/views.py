@@ -306,6 +306,7 @@ class WorkDone(generics.ListAPIView):
 
 class WorkDoneWeeks(APIView):
     serializer_class = WorksheetSerializer
+    filterset_fields = ('iso_week',)
 
     def get(self, request, format=None):
         week_numbers = Worksheet.objects.values(

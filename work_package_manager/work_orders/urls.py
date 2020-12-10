@@ -26,7 +26,7 @@ urlpatterns = [
     path('orders/summary/<int:work_instruction>', views.OrderSummaryInfo.as_view(), name='order-summary-info'),
     path('orders/locations/<int:work_instruction>', views.OrderLocations.as_view()),
     path('orders/work-instructions/available', views.AvailableOrderHeaders.as_view()),
-    path('orders/workload/weeks', views.WorkDoneWeeks.as_view()),
+    path('orders/workload/weeks/', views.WorkDoneWeeks.as_view()),
     path('orders/workload', views.WorkDone.as_view()),
 
     path('activity/info', views.ActivityInfo.as_view(), name='activity-info'),

@@ -16,7 +16,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020" />
+    <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/.eslintcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/workspace.code-workspace" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByArea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneBySupervisor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByWorkInstruction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByWorkType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/TestTableCube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/SummaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/SummaryCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/WorksheetData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/WorksheetData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +78,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../wpm-frontend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -1098,6 +1129,8 @@
       <workItem from="1607123562983" duration="2819000" />
       <workItem from="1607234879726" duration="4683000" />
       <workItem from="1607383707526" duration="10802000" />
+      <workItem from="1607407545405" duration="331000" />
+      <workItem from="1607610084546" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>
