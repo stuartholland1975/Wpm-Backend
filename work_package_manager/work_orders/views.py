@@ -203,9 +203,6 @@ class RateSetViewSet(viewsets.ModelViewSet):
     queryset = RateSetUplifts.objects.all()
 
 
-
-
-
 class ApplicationOrders(generics.ListAPIView):
     serializer_class = OrderHeaderSerializer
     filterset_fields = ('orderdetail__worksheet__application_number',)
@@ -233,9 +230,9 @@ class OrderSummaryInfo(ObjectMultipleModelAPIView):
                 value_applied=Coalesce(
                     Sum('worksheet__value_complete', filter=Q(worksheet__applied=True)), 0.00),
                 qty_os=F('qty_ordered') -
-                Coalesce(Sum('worksheet__qty_complete'), 0.00)
+                       Coalesce(Sum('worksheet__qty_complete'), 0.00)
             ).order_by('item_number'),
-                'serializer_class': OrderDetailSerializer},
+             'serializer_class': OrderDetailSerializer},
             {'queryset': order.sitelocation_set.annotate(item_count=Count('orderdetail'),
                                                          total_payable=Coalesce(Sum(
                                                              'orderdetail__total_payable'), 0.00),

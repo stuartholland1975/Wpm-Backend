@@ -26,6 +26,7 @@ djangorestframework-bulk = "*"
 pytest = "*"
 django-q = "*"
 redis = "*"
+django-fieldsignals = "*"
 
 [requires]
 python_version = "3.8"

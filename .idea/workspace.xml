@@ -17,36 +17,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a3611df-5779-43b6-adac-08031e18bf67" name="Default Changelist" comment="07112020">
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/.eslintcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/workspace.code-workspace" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneBySupervisor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByWorkInstruction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/charts/chart-js/WeeklyWorkDoneByWorkType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/TestTableCube.js" afterDir="false" />
+      <change afterPath="$USER_HOME$/Cube/wpm-analytics/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Cube/wpm-analytics/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Cube/wpm-analytics/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Cube/wpm-analytics/.idea/wpm-analytics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/CUBE.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Cube/wpm-analytics/schema/WorkOrdersWorksheet.js" beforeDir="false" afterPath="$USER_HOME$/Cube/wpm-analytics/schema/WorkOrdersWorksheet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/bulk_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/bulk_api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wpm-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wpm-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/ApplicationDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableOrderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/applications/AvailableWorksheetsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/navigation/NavDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_package_manager/work_package_manager/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/Test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/CommercialCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/SummaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/ui-components/SummaryCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/workload/WorkloadSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/worksheets/WorksheetForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/ApplicationDetailsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/data/WorksheetData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/data/WorksheetData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/services/thunks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wpm-frontend/src/components/test/TestTableCube.js" beforeDir="false" afterPath="$PROJECT_DIR$/../wpm-frontend/src/components/test/TestTableCube.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +91,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/httpRequests/2020-11-27T021711.400.json&#10;/home/developer/Wpm/wpm-backend/.idea/httpRequests/2020-11-27T025410.200.json" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wpm-frontend/src/components/work-instructions/InstructionList.js" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Cube/wpm-analytics" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -1003,7 +988,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django Server.WPM">
+  <component name="RunManager" selected="npm.CUBE">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="wpm-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1064,6 +1049,7 @@
       <item itemvalue="Django Server.WPM" />
       <item itemvalue="JavaScript Debug.Wpm In Chrome Local" />
       <item itemvalue="JavaScript Debug.Wpm In Chrome Network" />
+      <item itemvalue="npm.CUBE" />
       <item itemvalue="npm.start" />
     </list>
   </component>
@@ -1130,7 +1116,7 @@
       <workItem from="1607234879726" duration="4683000" />
       <workItem from="1607383707526" duration="10802000" />
       <workItem from="1607407545405" duration="331000" />
-      <workItem from="1607610084546" duration="415000" />
+      <workItem from="1607610084546" duration="3718000" />
     </task>
     <task id="LOCAL-00001" summary="31102020">
       <created>1604194966803</created>
@@ -1300,7 +1286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607394488867</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="10122020">
+      <created>1607611262038</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1607611262038</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1335,7 +1328,8 @@
     <MESSAGE value="0112020" />
     <MESSAGE value="02122020" />
     <MESSAGE value="07122020" />
-    <option name="LAST_COMMIT_MESSAGE" value="07122020" />
+    <MESSAGE value="10122020" />
+    <option name="LAST_COMMIT_MESSAGE" value="10122020" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

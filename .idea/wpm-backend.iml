@@ -17,6 +17,7 @@
     <orderEntry type="jdk" jdkName="Pipenv (wpm-backend)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="wpm-frontend" />
+    <orderEntry type="module" module-name="wpm-analytics" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="removeUnused" value="true" />
