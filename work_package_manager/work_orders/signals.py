@@ -44,7 +44,8 @@ def update_order_value_on_delete(instance, **kwargs):
 def update_iso_info(instance, **kwargs):
     if not instance.id:
         instance.iso_week = datetime.datetime.strftime(instance.date_work_done, "%V")
-        instance.iso_year = datetime.datetime.strftime(instance.date_work_done, "%Y")
+        instance.iso_year = datetime.datetime.strftime(instance.date_work_done, "%G")
+        instance.iso_date = datetime.datetime.strftime(instance.date_work_done, "%G-W%V")
 
 
 
