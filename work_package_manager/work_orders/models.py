@@ -225,9 +225,11 @@ class Application(models.Model):
         unique=True, verbose_name='Application No')
     app_date = models.DateField(verbose_name='Application Date')
     app_ref = models.CharField(max_length=255, verbose_name='Application Ref')
+    app_value = models.DecimalField(decimal_places=4, max_digits=12, default=0, verbose_name="Application Value")
     app_open = models.BooleanField(verbose_name='Application Open')
     app_current = models.BooleanField(verbose_name='Current Application')
-    app_submitted = models.BooleanField(verbose_name='Application Submitted', default=False)
+    app_submitted = models.BooleanField(
+        verbose_name='Application Submitted', default=False)
     submission_detail = JSONField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
