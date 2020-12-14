@@ -27,6 +27,7 @@ pytest = "*"
 django-q = "*"
 redis = "*"
 django-fieldsignals = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.8"

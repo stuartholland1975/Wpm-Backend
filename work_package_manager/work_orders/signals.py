@@ -5,7 +5,7 @@ from fieldsignals import pre_save_changed, post_save_changed
 from django_q.tasks import async_task
 import datetime
 
-from .models import Application, OrderDetail, OrderHeader, Worksheet, SiteLocation
+from .models import Application, OrderDetail, OrderHeader, SuperVisor, Worksheet, SiteLocation
 
 
 @receiver(post_save, sender=OrderDetail)
@@ -52,4 +52,10 @@ def update_order_complete_value(instance, created, **kwargs):
 def update_worksheet_ref(instance, created, **kwargs):
     if created:
         instance.worksheet_ref = f"{instance.work_instruction_id}/{instance.id}"
+        instance.save()
+
+@receiver(post_save, sender=SuperVisor)
+def update_full_name(instance, created, **kwargs):
+    if created:
+        instance.full_name = f"{instance.first_name} {instance.middle_name} {instance.surname}"
         instance.save()

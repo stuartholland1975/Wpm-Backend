@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/developer/.local/share/virtualenvs/wpm-backend-yyINFWiW/bin/python"
+    "python.pythonPath": "/home/developer/.local/share/virtualenvs/wpm-backend-yyINFWiW/bin/python",
+    "jupyter.jupyterServerType": "local"
 }

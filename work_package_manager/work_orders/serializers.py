@@ -3,6 +3,7 @@ import datetime
 
 from django.db.models import Count
 from rest_framework import serializers
+from rest_framework.fields import SerializerMethodField
 from rest_framework_bulk import (
     BulkListSerializer,
     BulkSerializerMixin,
@@ -213,6 +214,10 @@ class SiteLocationSerializer(serializers.ModelSerializer):
     applied_value = serializers.FloatField(read_only=True)
     labour_value = serializers.FloatField(read_only=True)
     materials_value = serializers.FloatField(read_only=True)
+    image_count = serializers.SerializerMethodField('get_image_count')
+
+    def get_image_count(self, obj):
+        return Image.objects.filter(location=obj.id).count()
 
     class Meta:
         model = SiteLocation
@@ -245,7 +250,6 @@ class DocumentSerializer(serializers.ModelSerializer):
 
 
 class ApplicationSerializer(serializers.ModelSerializer):
-    application_value = serializers.FloatField(read_only=True)
 
     class Meta:
         model = Application
