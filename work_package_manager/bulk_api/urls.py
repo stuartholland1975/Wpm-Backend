@@ -11,8 +11,6 @@ router.register('bulk-items', views.OrderDetailBulkViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
-    path('bulk-items', views.OrderDetailBulkViewSet.as_view({'patch': 'list'})),
+    path('bulk-items', views.OrderDetailBulkUpdateStatusView.as_view()),
     path('bulk-worksheets', views.WorksheetBulkUpdateView.as_view()),
-
-
 ]

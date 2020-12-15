@@ -1,4 +1,16 @@
 {
     "python.pythonPath": "/home/developer/.local/share/virtualenvs/wpm-backend-yyINFWiW/bin/python",
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "WPM-BEELINK",
+            "database": "work_package_manager",
+            "username": "postgres",
+            "password": "987jmo00"
+        }
+    ]
 }

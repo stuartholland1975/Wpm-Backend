@@ -1,18 +1,22 @@
-from django.db.models import Sum, Count, IntegerField, Q, F
-from django.db.models.functions import Coalesce, Cast
+from django.db.models import Count, F, IntegerField, Q, Sum
+from django.db.models.functions import Cast, Coalesce
 from django_filters import rest_framework as filters
 from drf_multiple_model.views import ObjectMultipleModelAPIView
-from rest_framework import viewsets, generics, permissions
+from rest_framework import generics, permissions, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import ActivityUnits, Activity, Application, Area, OrderHeader, OrderDetail, OrderStatus, SiteLocation, \
-    SuperVisor, Worksheet, WorkType, Image, Document, RateSetUplifts
-from .serializers import ActivitySerializer, ActivityUnitSerializer, AreaSerializer, OrderHeaderSerializer, \
-    OrderDetailSerializer, \
-    SiteLocationSerializer, OrderStatusSerializer, WorkTypeSerializer, WorksheetSerializer, \
-    SupervisorSerializer, \
-    ImagesSerializer, DocumentSerializer, ApplicationSerializer, RateSetSerializer
+from .models import (Activity, ActivityUnits, Application, Area, Document,
+                     Image, OrderDetail, OrderHeader, OrderStatus,
+                     RateSetUplifts, SiteLocation, SuperVisor, Worksheet,
+                     WorkType)
+from .serializers import (ActivitySerializer, ActivityUnitSerializer,
+                          ApplicationSerializer, AreaSerializer,
+                          DocumentSerializer, ImagesSerializer,
+                          OrderDetailSerializer, OrderHeaderSerializer,
+                          OrderStatusSerializer, RateSetSerializer,
+                          SiteLocationSerializer, SupervisorSerializer,
+                          WorksheetSerializer, WorkTypeSerializer)
 
 
 class CharInFilter(filters.BaseInFilter, filters.CharFilter):
@@ -210,9 +214,7 @@ class ApplicationOrders(generics.ListAPIView):
 class OrderSummaryInfo(ObjectMultipleModelAPIView):
     def get_querylist(request, *args, **kwargs):
         wi = request.kwargs['work_instruction']
-
         order = OrderHeader.objects.get(pk=wi)
-        worksheet = order.sitelocation_set.all()
         querylist = [
             {'queryset': OrderHeader.objects.filter(id=order.id).annotate(item_count=Count('orderdetail__id')).order_by(
                 'id'), 'serializer_class': OrderHeaderSerializer},
@@ -302,7 +304,7 @@ class WorkDoneWeeks(APIView):
 
     def get(self, request, format=None):
         week_numbers = Worksheet.objects.values(
-            'iso_week', 'iso_year', 'date_work_done').distinct().order_by('iso_week')
+            'iso_week', 'iso_year').distinct().order_by('iso_week')
         return Response(week_numbers)
 
 

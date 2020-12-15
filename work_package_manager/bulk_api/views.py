@@ -6,7 +6,7 @@ from rest_framework_bulk import (
     BulkModelViewSet
 )
 from rest_framework.response import Response
-from .serializers import SiteLocationSerializer, WorksheetSerializer, OrderDetailSerializer, TaskSerializer,  WorksheetBulkUpdateSerializer
+from .serializers import SiteLocationSerializer, WorksheetSerializer, OrderDetailSerializer, OrderDetailBulkUpdateSerializer,  WorksheetBulkUpdateSerializer
 from work_orders.models import OrderDetail, Worksheet, SiteLocation
 
 
@@ -104,4 +104,39 @@ class WorksheetBulkUpdateView(APIView):
             obj.save()
             instances.append(obj)
         serializer = WorksheetBulkUpdateSerializer(instances, many=True)
+        return Response(serializer.data)
+
+class OrderDetailBulkUpdateStatusView(APIView):
+
+    def get_object(self, obj_id):
+        try:
+            return OrderDetail.objects.get(id=obj_id)
+        except (OrderDetail.DoesNotExist, ValidationError):
+            raise status.HTTP_400_BAD_REQUEST
+
+    def validate_ids(self, id_list):
+        for id in id_list:
+            try:
+                OrderDetail.objects.get(id=id)
+            except (OrderDetail.DoesNotExist, ValidationError):
+                raise status.HTTP_400_BAD_REQUEST
+        return True
+
+    def patch(self, request, *args, **kwargs):
+        data = request.data
+        item_ids = [i['id'] for i in data]
+        self.validate_ids(item_ids)
+        instances = []
+        for temp_dict in data:
+            item_id = temp_dict['id']
+            item_complete = temp_dict['item_complete']
+            item_status = temp_dict['item_status']
+
+            
+            obj = self.get_object(item_id)
+            obj.item_complete = item_complete
+            obj.item_status = item_status
+            obj.save()
+            instances.append(obj)
+        serializer = OrderDetailBulkUpdateSerializer(instances, many=True)
         return Response(serializer.data)
