@@ -1,7 +1,8 @@
 import calendar
 import datetime
+from django.db.models.functions import Cast, Coalesce
 
-from django.db.models import Count
+from django.db.models import Count, Sum
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
 from rest_framework_bulk import (
@@ -70,7 +71,8 @@ class WorksheetSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     week_number = serializers.SerializerMethodField("get_week_ref")
     week_of_month = serializers.SerializerMethodField('get_week_month_ref')
     work_type = serializers.SerializerMethodField('get_work_type')
-    area_description = serializers.SerializerMethodField('get_area_description')
+    area_description = serializers.SerializerMethodField(
+        'get_area_description')
     area = serializers.SerializerMethodField('get_area')
 
     def get_supervisor_name(self, obj):
@@ -142,6 +144,7 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
     materials_value = serializers.DecimalField(
         max_digits=12, decimal_places=2, read_only=True)
     document_count = serializers.SerializerMethodField('get_document_count')
+    image_count = serializers.SerializerMethodField('get_image_count')
 
     def get_work_type(self, obj):
         return obj.project_type.work_type_description
@@ -157,6 +160,9 @@ class OrderHeaderSerializer(serializers.ModelSerializer):
 
     def get_document_count(self, obj):
         return Document.objects.filter(work_instruction=obj.id).aggregate(document_count=Count('id'))
+
+    def get_image_count(self, obj):
+        return Image.objects.filter(location__work_instruction=obj.work_instruction).aggregate(image_count=Count('id'))
 
     class Meta:
         model = OrderHeader
@@ -215,15 +221,19 @@ class SiteLocationSerializer(serializers.ModelSerializer):
     labour_value = serializers.FloatField(read_only=True)
     materials_value = serializers.FloatField(read_only=True)
     image_count = serializers.SerializerMethodField('get_image_count')
+    value_complete = serializers.SerializerMethodField('get_value_complete')
 
     def get_image_count(self, obj):
         return Image.objects.filter(location=obj.id).count()
 
+    def get_value_complete(self, obj):
+        value = obj.worksheet_set.aggregate(
+            value_complete=Coalesce(Sum('value_complete'), 0.00))
+        return value['value_complete']
+
     class Meta:
         model = SiteLocation
         fields = '__all__'
-        datatables_always_serialize = 'id'
-        list_serializer_class = BulkListSerializer
 
 
 class OrderStatusSerializer(serializers.ModelSerializer):
@@ -234,13 +244,17 @@ class OrderStatusSerializer(serializers.ModelSerializer):
 
 class ImagesSerializer(serializers.ModelSerializer):
     site_location = serializers.SerializerMethodField('get_site_location')
+    exif_data = serializers.SerializerMethodField('get_gps_decimal')
+
+    def get_gps_decimal(self, obj):
+        return obj.exif
 
     def get_site_location(self, obj):
         return obj.location.location_ref
 
     class Meta:
         model = Image
-        fields = '__all__'
+        exclude = ['exif']
 
 
 class DocumentSerializer(serializers.ModelSerializer):
@@ -250,7 +264,6 @@ class DocumentSerializer(serializers.ModelSerializer):
 
 
 class ApplicationSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Application
         fields = '__all__'

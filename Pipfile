@@ -28,6 +28,7 @@ django-q = "*"
 redis = "*"
 django-fieldsignals = "*"
 ipykernel = "*"
+piexif = "*"
 
 [requires]
 python_version = "3.8"
